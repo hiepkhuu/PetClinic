@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { check } = require('express-validator');
 const { asyncHandler, handleValidationErrors, csrfProtection } = require('./utils');
+const {bcrypt} = require('bcryptjs')
 
 const { User} = require('../db/models')
 const { restoreUser, loginUser, logoutUser} = require('../auth');
@@ -40,10 +41,25 @@ const userValidators = [
       .withMessage('Please provide a password')
       .matches('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/', 'g')
       .withMessage('Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")'),
+    check('confirmPassword')
+      .exists({checkFalsy: true})
+      .withMessage('Please provide a confirmed password')
+      .custom((value, { req }) => {
+        if (value !== req.body.password) {
+          throw new Error('Confirm Password does not match Password');
+        }
+        return true;
+      })
+      .withMessage('Password and Confirmed Password does not match!')
+
 ]
 
-router.get('/register', csrfProtection, asyncHandler(async(req, res)=>{//creates new user and sotres in db
+router.post('/register', csrfProtection, userValidators, asyncHandler(async(req, res)=>{//creates new user and sotres in db
  //TODO: create new user
+ const {username, email, password} = req.body
+ const hashedPassword = await bcrypt.hash(password, 10);
+ const user = await User.create({ username, email, hashedPassword });
+
  //TODO: direct them to homepage
 }))
 
