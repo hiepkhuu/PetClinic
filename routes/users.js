@@ -6,12 +6,17 @@ const { asyncHandler, handleValidationErrors, csrfProtection } = require('./util
 const { User} = require('../db/models')
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res, next) {//this is user homepage
   res.send('respond with a resource');
 });
 
-router.get('/register', csrfProtection, asyncHandler(async(req, res)=>{
-  const user = db.User
+router.get('/register', csrfProtection, asyncHandler(async(req, res)=>{//get registration page
+  res.render('user-register', { title: 'Registration', csrfToken: req.csrfToken()})
+}))
+
+router.get('/register', csrfProtection, asyncHandler(async(req, res)=>{//creates new user and sotres in db
+ //TODO: create new user
+ //TODO: direct them to homepage
 }))
 
 module.exports = router;
