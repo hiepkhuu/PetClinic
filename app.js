@@ -11,7 +11,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const db = require('./db/models');
 // const { v4: uuidv4} = require('uuid');//used to generate a key for session secret
-
+const { restoreUser } = require('./auth');
 
 const app = express();
 
@@ -20,7 +20,7 @@ const app = express();
 app.set('view engine', 'pug');
 app.use(cookieParser());
 // console.log(uuidv4())//used to genearate a key for seesion secret
-appluse(cookieParser(sessionSecret));
+app.use(cookieParser(sessionSecret));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -31,6 +31,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
+app.use(restoreUser);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', usersRouter);
