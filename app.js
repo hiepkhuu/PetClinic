@@ -5,20 +5,32 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const { sequelize } = require('./db/models');
 const session = require('express-session');
+const {sessionSecret} = require('./config')
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const db = require('./db/models')
+const db = require('./db/models');
+// const { v4: uuidv4} = require('uuid');//used to generate a key for session secret
+
 
 const app = express();
 
 // view engine setup
-app.set('view engine', 'pug');
 
+app.set('view engine', 'pug');
+app.use(cookieParser());
+// console.log(uuidv4())//used to genearate a key for seesion secret
+appluse(cookieParser(sessionSecret));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+
+app.use(session({
+  name: 'stock_flow.sid', //multiple apps running on server. preent multiple uses
+  secret: sessionSecret,
+  resave: false,
+  saveUninitialized: false
+}))
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', usersRouter);
