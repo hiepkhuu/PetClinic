@@ -23,12 +23,13 @@
     "pg": "^8.6.0",
     "pug": "2.0.4",
     "sequelize": "^5.22.4",
+    "sequelize-cli": "^5.5.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
     "dotenv-cli": "^4.0.0",
-    "nodemon": "^2.0.6",
-    "sequelize-cli": "^5.5.1"
+    "nodemon": "^2.0.6"
+
   }
 }
