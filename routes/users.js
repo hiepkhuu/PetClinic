@@ -13,11 +13,12 @@ router.get('/', function(req, res, next) {//this is user homepage
 });
 
 router.get('/register', csrfProtection, asyncHandler(async(req, res)=>{//get registration page
-  res.render('user-register',
-  {
+ const user = { userName: null, email: null }
+  res.render('user-register',{
     title: 'Registration',
     csrfToken: req.csrfToken(),
     // history: req.session.history,
+    user
   }
   )
 }))
@@ -62,8 +63,10 @@ const userValidators = [
 router.post('/register', csrfProtection, userValidators,
 asyncHandler(async(req, res)=>{//creates new user and sotres in db
  //TODO: create new user
+ //need to do errorValidators
  const {username, email, password } = req.body
  let { professionalUser } = req.body
+
  if (professionalUser){
   professionalUser = true;
 } else {
@@ -89,7 +92,7 @@ asyncHandler(async(req, res)=>{//creates new user and sotres in db
     const errors = validatorErrors.array().map((error) => error.msg);
 
     res.render('user-register', {
-      title: 'Register',
+      title: 'Registration',
       user,
       errors,
       csrfToken: req.csrfToken(),

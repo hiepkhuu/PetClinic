@@ -8,6 +8,7 @@
     "start:production": "node ./bin/www"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "connect-pg-simple": "^6.2.1",
     "connect-session-sequelize": "^7.0.4",
     "cookie-parser": "^1.4.5",
@@ -30,6 +31,5 @@
     "dotenv": "^8.2.0",
     "dotenv-cli": "^4.0.0",
     "nodemon": "^2.0.6"
-
   }
 }
