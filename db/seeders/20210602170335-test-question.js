@@ -2,31 +2,40 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
+      return queryInterface.bulkInsert('Questions', [
+        {
+          userId:1,
+          question: 'What are the most trending stocks right now?',
+          voteCount: 0,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+      },
+      {
+        userId:2,
+        question: 'Tried investing, but lost all my money. Any good advice?',
+        voteCount: 0,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        userId:3,
+        question: 'How risky are stocks anyway?',
+        voteCount: 0,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        userId:4,
+        question: 'HELP! just giving this a shot, dunno if it will work, my cat accidentally pressed something taht sold all my stocks. Any chance i can get it back?!?!',
+        voteCount: 0,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }
 
-      Example:
-      return queryInterface.bulkInsert('People', [{
-        name: 'John Doe',
-        isBetaMember: false
-      }], {});
-
-    */
-      return queryInterface.bulkInsert('People', [{
-        name: 'John Doe',
-        isBetaMember: false
-      }], {});
+    ], {});
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('People', null, {});
-    */
-      return queryInterface.bulkDelete('People', null, {});
+      return queryInterface.bulkDelete('Questions', null, {});
   }
 };
