@@ -5,19 +5,25 @@ module.exports = {
 
       return queryInterface.bulkInsert('Comments', [
         {
-        comment: "Dude that sucks! I really don't know how to help you. Hopefully someone answer this cuz I wanna find out too, just in case.",
-        answerId:  ,
-        userId: ,
+        comment: "Really hope you figure this out too.",
+        answerId: 1 ,
+        userId: 5,
+        createdAt: new Date(),
+          updatedAt: new Date(),
       },
       {
-        comment: '',
-        answerId:  ,
-        userId: ,
+        comment: 'Agreed. Try to do some research and comeback with more specific questions. Happy to answer!',
+        answerId: 2 ,
+        userId: 1 ,
+        createdAt: new Date(),
+          updatedAt: new Date(),
       },
       {
-        comment: '',
-        answerId:  ,
-        userId: ,
+        comment: "Yes, but you should really pull out right now. Doesn't look too hot",
+        answerId: 4 ,
+        userId: 2,
+        createdAt: new Date(),
+          updatedAt: new Date(),
       }
     ], {});
 
