@@ -1,26 +1,30 @@
 const createError = require('http-errors');
+const path = require('path')
 const express = require('express');
-const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const { sequelize } = require('./db/models');
+
 const session = require('express-session');
-const {sessionSecret} = require('./config')
+// const store = require('connect-pg-simple');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+
+const { sequelize } = require('./db/models');
+const {sessionSecret} = require('./config')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const db = require('./db/models');
 // const { v4: uuidv4} = require('uuid');//used to generate a key for session secret
 const { restoreUser } = require('./auth');
 
+
 const app = express();
 
 // view engine setup
 
 app.set('view engine', 'pug');
-app.use(cookieParser());
-// console.log(uuidv4())//used to genearate a key for seesion secret
 app.use(cookieParser(sessionSecret));
+// console.log(uuidv4())//used to genearate a key for seesion secret
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -29,7 +33,7 @@ app.use(session({
   name: 'stock_flow.sid', //multiple apps running on server. preent multiple uses
   secret: sessionSecret,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
 }))
 app.use(restoreUser);
 app.use(express.static(path.join(__dirname, 'public')));
@@ -42,7 +46,8 @@ const store = new SequelizeStore({ db: sequelize });
 
 app.use(
   session({
-    secret: 'superSecret',
+    // store: new (store(session))(),
+    seceret: 'superSecret',
     store,
     saveUninitialized: false,
     resave: false,
