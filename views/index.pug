@@ -1,4 +1,4 @@
-extends layout
+extends layout.pug
 
 append head
   //- add page specific styles by appending to the head
@@ -7,7 +7,17 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1= title
   div
-    a(href='/users/log-in' role='button') Log In
-  a(href='/users/register' role='button') Sign Up
+     h1= title
+  if locals.authenticated
+    div
+      a(href='/')
+        button Home Page
+  else
+    div
+      a(href='/users/login')
+        button Log In
+
+    //- div(class='answer-container')
+
+
