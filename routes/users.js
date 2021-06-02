@@ -22,6 +22,7 @@ router.get('/register', csrfProtection, asyncHandler(async(req, res)=>{//get reg
   )
 }))
 
+
 const userValidators = [
   check('username')
     .exists({ checkFalsy: true })
@@ -61,7 +62,13 @@ const userValidators = [
 router.post('/register', csrfProtection, userValidators,
 asyncHandler(async(req, res)=>{//creates new user and sotres in db
  //TODO: create new user
- const {username, email, password, professionalUser} = req.body
+ const {username, email, password } = req.body
+ let { professionalUser } = req.body
+ if (professionalUser){
+  professionalUser = true;
+} else {
+  professionalUser = false;
+}
 
  const user = await User.build({
    username,
@@ -80,6 +87,7 @@ asyncHandler(async(req, res)=>{//creates new user and sotres in db
     res.redirect('/')
   } else {
     const errors = validatorErrors.array().map((error) => error.msg);
+
     res.render('user-register', {
       title: 'Register',
       user,
