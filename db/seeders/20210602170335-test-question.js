@@ -12,7 +12,7 @@ module.exports = {
       },
       {
         userId:2,
-        question: 'Tried investing, but lost all my money. Any good advice?',
+        question: 'Tried investing, but lost all my money. Any good advice? Feeling really bummed out rn.',
         voteCount: 0,
         createdAt: new Date(),
         updatedAt: new Date(),
