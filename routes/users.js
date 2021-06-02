@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { check, validationResult } = require('express-validator');
+const { check, validationResult} = require('express-validator');
 const { asyncHandler, handleValidationErrors, csrfProtection } = require('./utils');
 const bcrypt = require('bcryptjs')
 
@@ -9,7 +9,7 @@ const { restoreUser, loginUser, logoutUser, requireAuth} = require('../auth');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {//this is user homepage
-  res.send('respond with a resource');
+  res.send('this is the user homepage');
 });
 
 router.get('/register', csrfProtection, asyncHandler(async(req, res)=>{//get registration page
@@ -17,7 +17,7 @@ router.get('/register', csrfProtection, asyncHandler(async(req, res)=>{//get reg
   {
     title: 'Registration',
     csrfToken: req.csrfToken(),
-    history: req.session.history,
+    // history: req.session.history,
   }
   )
 }))
@@ -43,9 +43,9 @@ const userValidators = [
       }),
    check('password')
       .exists({checkFalsy: true})
-      .withMessage('Please provide a password')
-      .matches('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/', 'g')
-      .withMessage('Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")'),
+      .withMessage('Please provide a password'),
+      // .matches('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/', 'g')
+      // .withMessage('Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")'),
     check('confirmPassword')
       .exists({checkFalsy: true})
       .withMessage('Please provide a confirmed password')
@@ -58,36 +58,38 @@ const userValidators = [
 
 ]
 
-router.post('/register', csrfProtection, userValidators, handleValidationErrors, asyncHandler(async(req, res)=>{//creates new user and sotres in db
+router.post('/register', csrfProtection, userValidators,
+asyncHandler(async(req, res)=>{//creates new user and sotres in db
  //TODO: create new user
  const {username, email, password, professionalUser} = req.body
- const hashedPassword = await bcrypt.hash(password, 10);
 
  const user = await User.build({
    username,
+   password,
    email,
-   hashedPassword,
    professionalUser
   });
 
-  const validatorErrors = validationResult(req);
-
-  if (validatorErrors.isEmpty()){
-    await book.save();
-    res.redirect('/');
+  const validatorErrors = validationResult(req)
+  console.log(validatorErrors)
+  if(validatorErrors.isEmpty()){
+    const hashedPassword = await bcrypt.hash(password, 10)
+    user.hashedPassword = hashedPassword;
+    await user.save()
+    loginUser(req, res, user)
+    res.redirect('/')
   } else {
-    const errors = validatorErrors.array().map((error)=> error.msg);
+    const errors = validatorErrors.array().map((error) => error.msg);
     res.render('user-register', {
-      title: 'Registration',
+      title: 'Register',
       user,
       errors,
       csrfToken: req.csrfToken(),
-    })
+    });
   }
+}));
 
- //TODO: direct them to homepage
 
- res.redirect('/');
-}))
+
 
 module.exports = router;

@@ -38,8 +38,9 @@ app.use(session({
 app.use(restoreUser);
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/users', usersRouter);
-app.use('/', indexRouter)
+// app.use('/', indexRouter)
+// app.use('/users', usersRouter);
+
 
 // set up session middleware
 const store = new SequelizeStore({ db: sequelize });
