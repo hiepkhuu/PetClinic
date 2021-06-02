@@ -6,47 +6,46 @@ const loginUser = (req, res, user) => {
   };
 };
 
+const requireAuth = (req, res, next) => {
+  if (!res.locals.authenticated) {
+    return res.redirect('/user/login');
+  }
+  return next();
+};
+
 const logoutUser = (req, res) => {
   delete req.session.auth;
 };
 
-const restoreUser = (req, res, next) => {
-  // token being parsed from request header by the bearerToken middleware
-  // function in app.js:
-  const { token } = req;
+const restoreUser = async (req, res, next) => {
+  // Log the session object to the console
+  // to assist with debugging.
+  // console.log(req.session);
 
-  if (!token) {
-    // Send a "401 Unauthorized" response status code
-    // along with an "WWW-Authenticate" header value of "Bearer".
-    return res.set("WWW-Authenticate", "Bearer").status(401).end();
-  }
-
-  return jwt.verify(token, secret, null, async (err, jwtPayload) => {
-    if (err) {
-      err.status = 401;
-      return next(err);
-    }
-
-    const { id } = jwtPayload.data;
+  if (req.session.auth) {
+    const { userId } = req.session.auth;
 
     try {
-      req.user = await User.findByPk(id);
-    } catch (e) {
-      return next(e);
-    }
+      const user = await db.User.findByPk(userId);
 
-    if (!req.user) {
-      // Send a "401 Unauthorized" response status code
-      // along with an "WWW-Authenticate" header value of "Bearer".
-      return res.set("WWW-Authenticate", "Bearer").status(401).end();
+      if (user) {
+        res.locals.authenticated = true;
+        res.locals.user = user;
+        next();
+      }
+    } catch (err) {
+      res.locals.authenticated = false;
+      next(err);
     }
-
-    return next();
-  });
+  } else {
+    res.locals.authenticated = false;
+    next();
+  }
 };
 
 module.exports = {
   loginUser,
   restoreUser,
   logoutUser,
+  requireAuth,
 };
