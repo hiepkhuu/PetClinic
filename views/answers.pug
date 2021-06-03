@@ -1,7 +1,12 @@
+extends index.pug
 
-form(action='/answers' method='post')
+include utils.pug
+
+block content
+  +validationErrorSummary(errors)
+  form(action=`/questions/${question.id}/answers` method='post')
         input(type='hidden', name='_csrf' value=csrfToken)
         label(for='answer') Answer
         textarea(name='answer', cols='30', rows='10')
         button(type='submit') Submit Answer
-        a(href='/users') Cancel
+        a(href='/') Cancel

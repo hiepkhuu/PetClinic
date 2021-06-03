@@ -10,7 +10,8 @@ const { restoreUser, loginUser, logoutUser, requireAuth} = require('../auth');
 
 /* GET users listing. */
 router.get('/homepage', requireAuth, asyncHandler(async(req, res, next)=> {//this is user homepage
-  const questions = await Question.findByPk(req.params.id, {
+  const {userId} = req.session.auth;
+  const questions = await Question.findByPk(userId, {
     include: Answer
   })
 

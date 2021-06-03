@@ -6,13 +6,17 @@ html
         link(rel='stylesheet' href='/stylesheets/reset.css')
   header(class='nav_bar')
    if locals.authenticated
-    h2 #{user.username}'s login success!
-      form(action="/users/logout", method="post")
-        button(type="submit") Logout
-    div
-      a(href=`/questions/`)
+     h3 logged in as #{user.username}
+     div
+      a(href='/')
+          button(class='btn home') StockFlow
+     div
+       form(action="/users/logout", method="post")
+         button(type="submit") Logout
+     div
+       a(href=`/questions/`)
           button(class='btn') Questions
-      a(href='/users/homepage')
+       a(href='/users/homepage')
           button(class='btn') User Homepage
    else
     div

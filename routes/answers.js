@@ -7,7 +7,7 @@ const {requireAuth} = require('../auth');
 
 router.get('/', csrfProtection,  requireAuth, asyncHandler(async(req, res)=>{//add require auth later
 
-  res.render('answers', {})
+  res.render('answers', { title: 'Answers', csrfToken: req.csrfToken()})
 }))
 
 const answersValidators =[
@@ -16,11 +16,18 @@ const answersValidators =[
     .withMessage('Please provide a value for answer')
 ];
 
-router.post('/', requireAuth, csrfProtection, answersValidators, asyncHandler(async(req, res)=>{
-  const { answer } = req.body
+router.post('/', csrfProtection, answersValidators, requireAuth, asyncHandler(async(req, res)=>{
+  const { answer, question}= req.body
+  const questionToBeAnswered = await Question.findOne
+  const {userId} = req.session.auth;
+
   const newAnswer = await Answer.build({
     answer,
-    questionId: req.user.id
+    questionId: 6,
+    voteCount: 0,
+    userId,
+    createdAt: new Date(),
+    updatedAt: new Date(),
   });
 
 
