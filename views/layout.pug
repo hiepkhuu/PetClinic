@@ -10,9 +10,9 @@ html
       form(action="/users/logout", method="post")
         button(type="submit") Logout
     div
-      a(href='')
+      a(href='/questions/:id(\\d+)')
           button(class='btn') Questions
-    a(href='/users/homepage')
+      a(href='/users/homepage')
           button(class='btn') User Homepage
    else
     div
