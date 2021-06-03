@@ -13,7 +13,8 @@ const { sequelize } = require('./db/models');
 const {sessionSecret} = require('./config')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const answersRouter = require('./routes/answers')
+const answersRouter = require('./routes/answers');
+const questionsRouter = require('./routes/answers');
 const db = require('./db/models');
 // const { v4: uuidv4} = require('uuid');//used to generate a key for session secret
 const { restoreUser } = require('./auth');
@@ -62,6 +63,7 @@ store.sync();
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/answers', answersRouter);
+app.use('/questions', questionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
