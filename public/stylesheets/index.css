@@ -1,3 +1,25 @@
 h1 {
     color: #555555;
 }
+
+.nav_bar {
+    display: flex;
+    background-color: rgb(255, 254, 245);
+    box-sizing: border-box;
+    height: 55px;
+    color: black;
+    margin-bottom: black
+}
+
+.btn {
+   height: 20px;
+   margin: 10px;
+   background-color: rgb(255, 254, 245);
+   border: 0
+
+
+}
+
+.btn.home{
+    height: 55px;
+}

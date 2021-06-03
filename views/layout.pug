@@ -4,9 +4,32 @@ html
       block head
         title="Express Starter App"
         link(rel='stylesheet' href='/stylesheets/reset.css')
-  body
-    block content
-    
+  header(class='nav_bar')
+   if locals.authenticated
+    h2 HELLO #{user.username}, you've logged in
+      form(action="/users/logout", method="post")
+        button(type="submit") Logout
+    div
+      a(href='')
+          button(class='btn') Questions
+   else
+    div
+      a(href='/')
+          button(class='btn home') StockFlow
+    div
+      a(href='')
+          button(class='btn') Questions
+    div
+      a(href='')
+          button(class='btn') Demo login
+    div
+      a(href='/users/login')
+          button(class='btn') Log In
+    div
+      a(href='/users/register')
+          button(class='btn') Sign Up
+
+  block content
 
 
 

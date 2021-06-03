@@ -8,7 +8,7 @@ router.get('/', async (req, res, next)=> {
   // })
 
 
-  res.render('index', { title: 'StockFlow Homepage!' });
+  res.render('index', {  });
 });
 
 module.exports = router;
