@@ -1,4 +1,4 @@
-extends index.pug
+extends layout.pug
 
 block content
   div(class='question-container')
@@ -7,5 +7,5 @@ block content
           each answer in questions.Answers
               li #{answer.answer}
   div
-    a(href='/answers')
+    a(href=`/questions/${questions.id}/answers`)
       button Answer

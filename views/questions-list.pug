@@ -7,7 +7,7 @@ if questions
     tbody
          each question in questions
            tr
-              td: a(class='question' href=`/questions/${question.id}`) #{question.question}
+              td: a(class='question' href=`/questions/${questions.id}`) #{question.question}
 else
   table(class='questions')
     thead(class='questionHead')

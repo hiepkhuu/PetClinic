@@ -4,6 +4,10 @@ html
       block head
         title="Express Starter App"
         link(rel='stylesheet' href='/stylesheets/reset.css')
+          //- add page specific styles by appending to the head
+        link(rel="stylesheet" href="/stylesheets/index.css")
+        //- add page specific js
+        script(src="/javascripts/index.js" type="module" defer)
   header(class='nav_bar')
    if locals.authenticated
      h3 logged in as #{user.username}
