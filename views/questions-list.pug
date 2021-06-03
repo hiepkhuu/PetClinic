@@ -3,6 +3,6 @@ table(class='questions')
         tr
           th Questions
     tbody
-       each question in questions
+       each question in allQuestions
           tr
-              td: a(class='question' href='') #{question.question}
+              td: a(class='question' href=`/questions/${question.id}`) #{question.question}
