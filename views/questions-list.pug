@@ -1,0 +1,8 @@
+table(class='questions')
+    thead(class='questionHead')
+        tr
+          th Questions
+    tbody
+       each question in questions
+          tr
+              td: a(class='question' href='') #{question.question}

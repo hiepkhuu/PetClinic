@@ -1,0 +1,11 @@
+extends index.pug
+
+include utils.pug
+
+block content
+  +validationErrorSummary(errors)
+  form(action='/questions/add' method='post')
+      input(type='hidden' name='_csrf' value=csrfToken)
+      label(for='question') Ask Question
+      textarea(name='question' rows=15 cols=40)
+      button(type='submit') Add Question
