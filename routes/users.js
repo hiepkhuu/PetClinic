@@ -8,7 +8,7 @@ const { User, Answer} = require('../db/models')
 const { restoreUser, loginUser, logoutUser, requireAuth} = require('../auth');
 
 /* GET users listing. */
-router.get('/', requireAuth, function(req, res, next) {//this is user homepage
+router.get('/homepage', requireAuth, function(req, res, next) {//this is user homepage
   // const userId = req.
   // const userAnswer = await Answer.findById({})
   res.render('user-profile',{});
