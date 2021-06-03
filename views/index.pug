@@ -7,17 +7,31 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  div
-     h1= title
-  if locals.authenticated
-    div
-      a(href='/')
-        button Home Page
-  else
-    div
-      a(href='/users/login')
-        button Log In
+     div
+        h1 WELCOME TO STOCK FLOW
+     if locals.authenticated
+      h2 HELLO #{user.username}, you've logged in
+      form(action="/users/logout", method="post")
+        button(type="submit") Logout
+      div
+        a(href='')
+          button Questions
+     else
+      div
+         a(href='/')
+          button StockFlow
+      div
+        a(href='')
+          button Questions
+      div
+        a(href='')
+          button Demo login
+      div
+        a(href='/users/login')
+          button Log In
+      div
+        a(href='/users/register')
+          button Sign Up
 
-    //- div(class='answer-container')
 
 

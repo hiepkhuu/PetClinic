@@ -11,7 +11,7 @@ const { restoreUser, loginUser, logoutUser, requireAuth} = require('../auth');
 router.get('/', requireAuth, function(req, res, next) {//this is user homepage
   // const userId = req.
   // const userAnswer = await Answer.findById({})
-  res.render('user-homepage',{});
+  res.render('user-profile',{});
 });
 
 router.get('/register', csrfProtection, asyncHandler(async(req, res)=>{//get registration page
@@ -131,7 +131,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
       const passwordMatch = await bcrypt.compare(password, user.hashedPassword.toString());
       if (passwordMatch) {
         loginUser(req, res, user)
-        return res.redirect('/users')
+        return res.redirect('/')
       }
     }
     errors.push('Login failed for the provided email address and password');

@@ -6,11 +6,7 @@ html
         link(rel='stylesheet' href='/stylesheets/reset.css')
   body
     block content
-    if locals.authenticated
-      h2 Welcome to Stock Flow, good luck flowin!
-      form(action="/users/logout", method="post")
-        button(type="submit") Logout
-      
-    //- else
-      //- button(href="/users/login") Login
-      //- button(href='/users/register') Register
+    
+
+
+
