@@ -1,0 +1,9 @@
+extends index.pug
+
+block content
+  h1 Hello #{user.username}, this is your homepage
+  a(href='/answers')
+    button Answer A Question (temporarily)
+  body
+    h1= title
+    include questions-list.pug

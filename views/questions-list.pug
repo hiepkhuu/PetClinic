@@ -1,8 +1,18 @@
-table(class='questions')
+
+if questions
+  table(class='questions')
     thead(class='questionHead')
         tr
           th Questions
     tbody
-       each question in allQuestions
-          tr
+         each question in questions
+           tr
               td: a(class='question' href=`/questions/${question.id}`) #{question.question}
+else
+  table(class='questions')
+    thead(class='questionHead')
+        tr
+          th Questions
+    tbody
+      tr
+          td please answer some questions!

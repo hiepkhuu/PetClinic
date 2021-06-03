@@ -4,15 +4,20 @@ const { check, validationResult} = require('express-validator');
 const { asyncHandler, csrfProtection } = require('./utils');
 const bcrypt = require('bcryptjs')
 
-const { User, Answer} = require('../db/models')
+const { User, Answer, Question} = require('../db/models')
 const { restoreUser, loginUser, logoutUser, requireAuth} = require('../auth');
 
+
 /* GET users listing. */
-router.get('/homepage', requireAuth, function(req, res, next) {//this is user homepage
-  // const userId = req.
-  // const userAnswer = await Answer.findById({})
-  res.render('user-profile',{});
-});
+router.get('/homepage', requireAuth, asyncHandler(async(req, res, next)=> {//this is user homepage
+  const questions = await Question.findByPk(req.params.id, {
+    include: Answer
+  })
+
+    res.render('user-homepage',{questions});
+
+
+}));
 
 router.get('/register', csrfProtection, asyncHandler(async(req, res)=>{//get registration page
  const user = { userName: null, email: null }

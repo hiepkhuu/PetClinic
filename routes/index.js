@@ -7,9 +7,9 @@ const {Question, Answer, User} = require("../db/models");
 router.get('/', asyncHandler(async (req, res, next)=> {
 //get all Qs
 
-  const allQuestions = await Question.findAll()
+  const questions = await Question.findAll()
 
-  res.render('index', { allQuestions, title: 'Questions' });
+  res.render('index', { questions, title: 'Questions' });
 }));
 
 module.exports = router;

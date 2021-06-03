@@ -4,15 +4,22 @@ const {check, validationResult} = require('express-validator');
 const {asyncHandler, csrfProtection} = require('./utils');
 const {requireAuth} = require("../auth");
 const {Question, Answer, User} = require("../db/models");
-const { ResultWithContext } = require('express-validator/src/chain');
 
+
+//just get questions
+router.get('/', asyncHandler(async(req, res)=>{
+  const questions = await Question.findByPk(req.params.id, {
+    include: Answer
+  })
+   res.render('questions-list', {questions});
+}))
 
 //get Q with id and render Q + answers
 router.get('/:id(\\d+)', asyncHandler(async(req, res)=>{
-  const question = await Question.findByPk(req.params.id, {
+  const questions = await Question.findByPk(req.params.id, {
     include: Answer
   })
-   res.render('question-page', {question});
+   res.render('single-question-page', {questions});
 }))
 
 const questionValidator = [

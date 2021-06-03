@@ -2,7 +2,7 @@ extends index.pug
 
 block content
   div(class='question-container')
-      h2  #{question.question}
+      h1  #{questions.question}
         ul
-          each answer in question.Answers
+          each answer in questions.Answers
               li #{answer.answer}
