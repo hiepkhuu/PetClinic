@@ -16,13 +16,13 @@ body
           button(class='btn home') StockFlow~
      div
        a(href=`/questions/`)
-          button(class='btn') Questions
+          button(class='btn question') Questions
      div
        a(href='/users/homepage')
           button(class='btn') User Homepage
      div
        form(action="/users/logout", method="post")
-         button(type="submit") Logout
+         button(type="submit" class='btn entry') Logout
    else
     div
       a(href='/')
@@ -32,6 +32,8 @@ body
           button(class='btn question') Questions
       a(href='/users/guest')
           button(class='btn guest') Guest Login
+    div(class='search-container')
+      input(type='search' class='search-box')
     div(class='entry-container')
       a(href='/users/login')
           button(class='btn entry') Log in
@@ -39,3 +41,4 @@ body
           button(class='btn entry') Sign up
 
   block content
+

@@ -2,8 +2,7 @@
 div(class='question-page')
     if questions
           div(class='side-bar')
-               a(href='/')
-                      button(class='side-bar btn') home
+               a(href='/' class='side-bar btn') Home
           div(class='questions-list-container')
              div(class='questions-box')
                  div(class='questions-header')
@@ -13,20 +12,30 @@ div(class='question-page')
                       a(href=`/questions/add`)
                           button(class='btn ask-question') Ask Question
 
-                 div
+                 div(class='row')
                     p Top 5 questions
                  div(class='')
                       div(class='questionbody')
                          each question in questions
-                               div(class='question-row')
-                                  div(class='votes-answers-box')
-                                    p votes
-                                    p answers
+                               div(class='row question')
+                                  div(class='counts-box')
+                                    div(class='vote-box')
+                                       div(class='span')
+                                          span(id='number') 0
+                                       div(class='span')
+                                          span votes
+                                    div(class='answer-box')
+                                       div(class='span')
+                                          span(id='number') 0
+                                       div(class='span')
+                                          span answers
                                   div(class='question-display-box')
                                     div(class='question-link-container')
                                        a(class='question-link-btn' href=`/questions/${question.id}`) #{question.question}
-                                    div(class='question-date-container')
-                                       p this is date
+                                    div(class='question-date-author-container')
+                                       div(class='q-date-auth-box')
+                                           p asked 2020-09-28T20:04:34.365Z
+                                           p Author
     else
          table(class='questions')
             thead(class='questionHead')
