@@ -2,7 +2,8 @@
 div(class='question-page')
     if questions
           div(class='side-bar')
-               button home
+               a(href='/')
+                      button(class='side-bar btn') home
           div(class='questions-list-container')
              div(class='questions-box')
                  div(class='questions-header')
@@ -10,19 +11,22 @@ div(class='question-page')
                        h1 All Questions
                    div(class='ask-button-container')
                       a(href=`/questions/add`)
-                          button Ask Question
+                          button(class='btn ask-question') Ask Question
 
                  div
                     p Top 5 questions
                  div(class='')
-                    table(class='questions')
-                      thead(class='questionHead')
-                         tr
-                           th
-                      tbody(class='questionbody')
+                      div(class='questionbody')
                          each question in questions
-                             tr
-                                  td: a(class='question' href=`/questions/${question.id}`) #{question.question}
+                               div(class='question-row')
+                                  div(class='votes-answers-box')
+                                    p votes
+                                    p answers
+                                  div(class='question-display-box')
+                                    div(class='question-link-container')
+                                       a(class='question-link-btn' href=`/questions/${question.id}`) #{question.question}
+                                    div(class='question-date-container')
+                                       p this is date
     else
          table(class='questions')
             thead(class='questionHead')
