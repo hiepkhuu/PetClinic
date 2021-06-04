@@ -2,33 +2,40 @@ doctype html
 html
   head
       block head
-        title="Express Starter App"
+        title="Stock Flow"
         link(rel='stylesheet' href='/stylesheets/reset.css')
+          //- add page specific styles by appending to the head
+        link(rel="stylesheet" href="/stylesheets/index.css")
+        //- add page specific js
+        script(src="/javascripts/index.js" type="module" defer)
+body
   header(class='nav_bar')
    if locals.authenticated
-    h2 HELLO #{user.username}, you've logged in
-      form(action="/users/logout", method="post")
-        button(type="submit") Logout
-    div
-      a(href='/questions/:id(\\d+)')
+     div(class='nav_bar btn')
+      a(href='/')
+          button(class='btn home') StockFlow~
+     div
+       a(href=`/questions/`)
           button(class='btn') Questions
-      a(href='/users/homepage')
+     div
+       a(href='/users/homepage')
           button(class='btn') User Homepage
+     div
+       form(action="/users/logout", method="post")
+         button(type="submit") Logout
    else
     div
       a(href='/')
-          button(class='btn home') StockFlow
+          button(class='btn home') StockFlow~
     div
-      a(href='')
-          button(class='btn') Questions
-    div
-      a(href='')
-          button(class='btn') Demo login
-    div
+      a(href=`/questions/`)
+          button(class='btn question') Questions
+      a(href='/users/guest')
+          button(class='btn guest') Guest Login
+    div(class='entry-container')
       a(href='/users/login')
-          button(class='btn entry') Log In
-    div
+          button(class='btn entry') Log in
       a(href='/users/register')
-          button(class='btn entry') Sign Up
+          button(class='btn entry') Sign up
 
   block content

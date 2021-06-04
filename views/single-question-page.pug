@@ -1,0 +1,11 @@
+extends layout.pug
+
+block content
+  div(class='question-container')
+      h1  #{questions.question}
+        ul
+          each answer in questions.Answers
+              li #{answer.answer}
+  div
+    a(href=`/questions/${questions.id}/answers`)
+      button Answer

@@ -62,7 +62,7 @@ store.sync();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/answers', answersRouter);
+app.use('/questions', answersRouter);
 app.use('/questions', questionsRouter);
 
 // catch 404 and forward to error handler

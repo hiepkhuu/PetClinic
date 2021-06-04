@@ -4,15 +4,31 @@ const { check, validationResult} = require('express-validator');
 const { asyncHandler, csrfProtection } = require('./utils');
 const bcrypt = require('bcryptjs')
 
-const { User, Answer} = require('../db/models')
-const { restoreUser, loginUser, logoutUser, requireAuth} = require('../auth');
+const { User, Answer, Question} = require('../db/models')
+const { loginUser, logoutUser, requireAuth} = require('../auth');
+
 
 /* GET users listing. */
-router.get('/homepage', requireAuth, function(req, res, next) {//this is user homepage
-  // const userId = req.
-  // const userAnswer = await Answer.findById({})
-  res.render('user-profile',{});
-});
+router.get('/homepage',  asyncHandler(async(req, res)=> {//this is user homepage
+  const {userId} = req.session.auth;
+  const user = await User.findByPk(
+    userId,
+    {
+      include: [Answer, Question]
+    })
+
+
+  const questions = user.Questions;
+  const answers = user.Answers;
+  const professional = user.professionalUser
+  // const questions = await Question.findByPk(userId, {
+  //   include: Answer
+  // })
+
+    res.render('user-homepage',{ answers, questions, user, professional});
+
+
+}));
 
 router.get('/register', csrfProtection, asyncHandler(async(req, res)=>{//get registration page
  const user = { userName: null, email: null }
@@ -49,8 +65,8 @@ const userValidators = [
    check('password')
       .exists({checkFalsy: true})
       .withMessage('Please provide a password'),
-      // .matches('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/', 'g')
-      // .withMessage('Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")'),
+      // .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/, "g")
+      // .withMessage("Password must contain at least 1 lowercase letter, uppercase letter, number, and special character"),
     check('confirmPassword')
       .exists({checkFalsy: true})
       .withMessage('Please provide a confirmed password')
@@ -62,6 +78,8 @@ const userValidators = [
       })
 
 ]
+
+
 
 router.post('/register', csrfProtection, userValidators,
 asyncHandler(async(req, res)=>{//creates new user and sotres in db
@@ -148,6 +166,13 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
 
 }));
 
+router.get('/guest', asyncHandler(async(req, res) => {
+  const user = await User.findByPk(1);
+  loginUser(req, res, user);
+  return res.redirect("/users/homepage");
+})
+
+);
 router.post('/logout', (req, res) => {
 
   logoutUser(req, res)

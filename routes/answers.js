@@ -5,9 +5,21 @@ const { asyncHandler, csrfProtection } = require('./utils');
 const { User, Answer, Question } = require('../db/models')
 const {requireAuth} = require('../auth');
 
-router.get('/', csrfProtection,  requireAuth, asyncHandler(async(req, res)=>{//add require auth later
+router.get('/:id(\\d+)/answers', csrfProtection,  requireAuth, asyncHandler(async(req, res)=>{//add require auth later
+    const id = req.params.id;
+    const {userId} = req.session.auth;
 
-  res.render('answers', {})
+    const user = await User.findByPk(userId);
+    // if (user.professionalUser){
+    //   res.render('answers', { id, title: 'Answer', csrfToken: req.csrfToken()})
+    // } else {
+    //   res.render('unauthorized-user')
+    // }
+    if (user){
+      res.render('answers', { id, title: 'Answer', csrfToken: req.csrfToken()})
+    }
+
+
 }))
 
 const answersValidators =[
@@ -16,25 +28,34 @@ const answersValidators =[
     .withMessage('Please provide a value for answer')
 ];
 
-router.post('/', requireAuth, csrfProtection, answersValidators, asyncHandler(async(req, res)=>{
-  const { answer } = req.body
+router.post('/:id(\\d+)/answers', csrfProtection, answersValidators, requireAuth, asyncHandler(async(req, res)=>{
+  const { answer}= req.body
+
+  const {userId} = req.session.auth;
+
+  const id = req.params.id
+
   const newAnswer = await Answer.build({
     answer,
-    questionId: req.user.id
+    questionId: id,
+    voteCount: 0,
+    userId,
+    createdAt: new Date(),
+    updatedAt: new Date(),
   });
 
 
   const validatorErrors = validationResult(req);
-  console.log(validatorErrors)
+
 
   if(validatorErrors.isEmpty()){
     await newAnswer.save()
-    res.redirect('/')
+    res.redirect(`/questions/${id}`)
   } else {
-    const errors = validatorErrors.array().map((error)=> error.mgs);
+    const errors = validatorErrors.array().map((error)=> error.msg);
 
    res.render('answers', {
-      title: 'answers',
+      title: 'Answers',
       errors,
       csrfToken: req.csrfToken(),
     })
