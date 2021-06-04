@@ -1,18 +1,33 @@
 
-if questions
-  table(class='questions')
-    thead(class='questionHead')
-        tr
-          th Questions
-    tbody
-         each question in questions
-           tr
-              td: a(class='question' href=`/questions/${question.id}`) #{question.question}
-else
-  table(class='questions')
-    thead(class='questionHead')
-        tr
-          th Questions
-    tbody
-      tr
-          td you have no questionsplease answer some questions!
+div(class='question-page')
+    if questions
+          div(class='side-bar')
+               button home
+          div(class='questions-list-container')
+             div(class='questions-box')
+                 div(class='questions-header')
+                   div(class='question-button-container')
+                       h1 All Questions
+                   div(class='ask-button-container')
+                      a(href=`/questions/add`)
+                          button Ask Question
+
+                 div
+                    p Top 5 questions
+                 div(class='')
+                    table(class='questions')
+                      thead(class='questionHead')
+                         tr
+                           th
+                      tbody(class='questionbody')
+                         each question in questions
+                             tr
+                                  td: a(class='question' href=`/questions/${question.id}`) #{question.question}
+    else
+         table(class='questions')
+            thead(class='questionHead')
+                 tr
+                    th Questions
+            tbody
+              tr
+                  td you have no questionsplease answer some questions!

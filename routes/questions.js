@@ -14,7 +14,7 @@ router.get('/', asyncHandler(async(req, res)=>{
   //  res.render('questions-list', {questions});
   const questions = await Question.findAll()
 
-  res.render('index', { questions, title: 'Questions' });
+  res.render('index', { questions, title: '' });
 }))
 
 //get Q with id and render Q + answers

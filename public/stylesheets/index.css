@@ -1,30 +1,112 @@
 h1 {
     color: #555555;
+
+}
+
+html {
+    font-family: 'Helvatica Neue'
 }
 
 .nav_bar {
     display: flex;
-    background-color: rgb(236, 235, 235);
+    justify-content: center;
+    background-color: #1d2935;
     box-sizing: border-box;
     height: 55px;
     color: black;
-    margin-bottom: black
-}
-
-.btn {
-   height: 20px;
-   margin: 10px;
-   background-color: rgb(236, 235, 235);
-   border: 1
-
 
 }
 
-.btn.home{
-    height: 35px;
+body{
+    background-color:white;
 }
 
+button {
+    display: flexbox;
+   height: 30px;
+   margin: 0px 3px 0px 0px;
+   padding: 6px 16px;
+   background-color: #1d2935;
+   border: 0;
+   color: white
+}
+
+button.question,
+button.guest {
+    margin-top: 12px;
+
+    /* border-color: rgb(255, 255, 255); */
+    border-radius: 7px;
+
+}
+button:hover{
+    background-color:  #34475c;
+
+}
+button.home{
+
+    height: 55px;
+    border-radius: 0;
+    font-size: 25px;
+    font-weight: 1000;
+    color:rgb(86, 205, 50)
+}
+
+
+.entry-container{
+    margin: 7px;
+}
 .btn.entry{
+    position: relative;
+    height: 4opx;
+    justify-content: flex-end;
+    background-color: rgb(86, 205, 50);
+    border-radius: 1px;
+    color: black;
+    height: 40px;
+    font-family: inherit;
+    padding:
 
-    justify-content: space-around
+
 }
+
+/* .btn.entry:hover{
+    background-color: greenyellow
+} */
+
+.question-page{
+    display: flex;
+
+}
+.questions-list-container{
+    display: flex;
+    justify-content: center;
+    border: 10px;
+    background-color: white;
+    padding: 24px;
+    border-left: 1px solid #1d2935;
+    height: 100%;
+    width: 100%;
+
+
+}
+
+
+
+.questions-header{
+    height: 80px;
+    display:flex;
+    justify-content: space-between
+
+}
+
+.footer{
+    display:flex;
+    align-items: flex-end;
+    background-color: #1d2935;
+    color: white
+}
+
+
+
+

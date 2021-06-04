@@ -6,11 +6,9 @@ append head
 block content
   div
     images(src="public/images/homepage.jpg", alt="")
-  div
-      a(href='/questions/add')
-          button(class='btn') Ask A Question
-  h1= title
+  h1
   include questions-list
+  include footer
 
 
 
