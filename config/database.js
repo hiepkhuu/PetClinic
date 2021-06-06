@@ -15,6 +15,7 @@ module.exports = {
     host,
     // sessionSecret,
     dialect: "postgres",
+    seederStorage: 'sequelize',
   },
   // test: {
   //   dialect: "sqlite",

@@ -1,3 +1,4 @@
+
 h1 {
     color: #555555;
 
@@ -7,20 +8,31 @@ html {
     font-family: 'Helvatica Neue'
 }
 
+
 .nav_bar {
     display: flex;
+    width: 100%;
     justify-content: center;
     background-color: #1d2935;
     box-sizing: border-box;
     height: 55px;
     color: black;
-
 }
 
 body{
     background-color:white;
 }
 
+.search-box{
+    display:flex;
+    margin: 9px;
+    height: 35px;
+    border-radius: 2px;
+    width: auto;
+}
+.search-container{
+    margin-right: 5px;
+}
 button {
     display: flexbox;
    height: 30px;
@@ -28,11 +40,13 @@ button {
    padding: 6px 16px;
    background-color: #1d2935;
    border: 0;
-   color: white
+   color: white;
+
 }
 
 button.question,
-button.guest {
+button.guest,
+button.homepage {
     margin-top: 12px;
 
     /* border-color: rgb(255, 255, 255); */
@@ -52,6 +66,9 @@ button.home{
     color:rgb(86, 205, 50)
 }
 
+.btn.entry:hover{
+    background-color:  rgb(67, 161, 39);
+}
 
 .entry-container{
     margin: 7px;
@@ -65,41 +82,135 @@ button.home{
     color: black;
     height: 40px;
     font-family: inherit;
-    padding:
-
-
+    border-radius: 3px;
 }
 
-/* .btn.entry:hover{
-    background-color: greenyellow
-} */
+.btn.ask-question{
+    position: relative;
+    height: 4opx;
+    justify-content: flex-end;
+    background-color: rgb(86, 205, 50);
+    border-radius: 1px;
+    color: black;
+    height: 40px;
+    font-family: inherit;
+}
+
+.btn.ask-question:hover{
+    background-color:  rgb(67, 161, 39);
+}
+
+.side-bar{
+    max-width: 200px;
+    border-right: 1px solid #dad9d9;
+}
+.side-bar.btn{
+    margin-top: 25px;
+    display: flex;
+    justify-content: start;
+    min-width: 140px;
+    width: 100%;
+    padding: 8px 5px 8px 10px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+.side-bar.btn:hover{
+    background-color: #d3d3d3
+}
+
+
 
 .question-page{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
 
 }
+
+.questions-box{
+    display: flexbox;
+    width: 100%;
+}
+
 .questions-list-container{
     display: flex;
     justify-content: center;
     border: 10px;
     background-color: white;
     padding: 24px;
-    border-left: 1px solid #1d2935;
     height: 100%;
-    width: 100%;
-
-
 }
 
 
 
 .questions-header{
-    height: 80px;
+    height: 60px;
     display:flex;
     justify-content: space-between
 
 }
+.row,
+.row.question{
+    display: flex;
+    border-bottom: 1px solid #dad9d9;
+    margin: 10px;
+}
 
+.row.question{
+    height: 130px;
+}
+
+.counts-box{
+    margin: 10px;
+}
+
+
+.vote-box span,
+.answer-box span {
+    display:flex;
+    justify-content: center;
+    font-size: 12px
+}
+
+.answer-box {
+    margin-top: 5px;
+}
+
+.question-link-container{
+    display: flex;
+    width: 100%;
+    /* justify-content: flex-end */
+}
+.question-link-btn{
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: rgb(67, 161, 39)
+}
+.question-date-author-container{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end
+}
+.q-date-auth-box p{
+    margin: 10px;
+    font-size: small;
+    color: rgb(114, 113, 113)
+}
+
+#number{
+    font-size: 22px;
+}
+
+.question-display-box{
+    display: flexbox;
+    width: 100%;
+    margin: 10px;
+}
+
+/* .question-row.btn {
+
+} */
 .footer{
     display:flex;
     align-items: flex-end;
@@ -109,4 +220,32 @@ button.home{
 
 
 
+/*
 
+div(class='question-page')
+    if questions
+          div(class='side-bar')
+               a(href='/')
+                      button(class='side-bar btn') home
+          div(class='questions-list-container')
+             div(class='questions-box')
+                 div(class='questions-header')
+                   div(class='question-button-container')
+                       h1 All Questions
+                   div(class='ask-button-container')
+                      a(href=`/questions/add`)
+                          button(class='btn ask-question') Ask Question
+
+                 div
+                    p Top 5 questions
+                 div(class='')
+                    table(class='questions')
+                      thead(class='questionHead')
+                         tr
+                           th
+                      tbody(class='questionbody')
+                         each question in questions
+                               tr(class='question-row')
+                                  td: a(class='question' href=`/questions/${question.id}`)
+                                          button(class='question-row btn') #{question.question}
+    else */
