@@ -9,39 +9,39 @@ html
         //- add page specific js
         script(src="/javascripts/index.js" type="module" defer)
 body
-      div(class='alert-bar')
-        header(class='nav_bar')
-        if locals.authenticated
-          div(class='nav_bar btn')
-            a(href='/')
-                button(class='btn home') StockFlow~
-          div
-            a(href=`/questions/`)
-                button(class='btn question') Questions
-          div(class='search-container')
-            input(type='search' class='search-box')
-          div
-            a(href='/users/homepage')
-                button(class='btn homepage') Homepage
-          div
-            form(action="/users/logout", method="post")
-              button(type="submit" class='btn entry logout') Logout
-        else
-          div
-            a(href='/')
-                button(class='btn home') StockFlow~
-          div
-            a(href=`/questions/`)
-                button(class='btn question') Questions
-            a(href='/users/guest')
-                button(class='btn guest') Guest Login
-          div(class='search-container')
-            input(type='search' class='search-box')
-          div(class='entry-container')
-            a(href='/users/login')
-                button(class='btn entry') Log in
-            a(href='/users/register')
-                button(class='btn entry') Sign up
+ div(class='alert-bar')
+  header(class='nav_bar')
+   if locals.authenticated
+     div(class='nav_bar btn')
+      a(href='/')
+          button(class='btn home') StockFlow~
+     div
+       a(href=`/questions/`)
+          button(class='btn question') Questions
+     div(class='search-container')
+      input(type='search' class='search-box')
+     div
+       a(href='/users/homepage')
+          button(class='btn homepage') Homepage
+     div
+       form(action="/users/logout", method="post")
+         button(type="submit" class='btn entry logout') Logout
+   else
+    div
+      a(href='/')
+          button(class='btn home') StockFlow~
+    div
+      a(href=`/questions/`)
+          button(class='btn question') Questions
+      a(href='/users/guest')
+          button(class='btn guest') Guest Login
+    div(class='search-container')
+      input(type='search' class='search-box')
+    div(class='entry-container')
+      a(href='/users/login')
+          button(class='btn entry') Log in
+      a(href='/users/register')
+          button(class='btn entry') Sign up
 
-        block content
+  block content
 
