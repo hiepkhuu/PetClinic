@@ -9,6 +9,7 @@ html
         //- add page specific js
         script(src="/javascripts/index.js" type="module" defer)
 body
+ div(class='alert-bar')
   header(class='nav_bar')
    if locals.authenticated
      div(class='nav_bar btn')
@@ -24,7 +25,7 @@ body
           button(class='btn homepage') Homepage
      div
        form(action="/users/logout", method="post")
-         button(type="submit" class='btn entry') Logout
+         button(type="submit" class='btn entry logout') Logout
    else
     div
       a(href='/')
