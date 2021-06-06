@@ -17,9 +17,11 @@ body
      div
        a(href=`/questions/`)
           button(class='btn question') Questions
+     div(class='search-container')
+      input(type='search' class='search-box')
      div
        a(href='/users/homepage')
-          button(class='btn') User Homepage
+          button(class='btn homepage') Homepage
      div
        form(action="/users/logout", method="post")
          button(type="submit" class='btn entry') Logout
