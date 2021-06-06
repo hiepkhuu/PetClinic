@@ -10,6 +10,7 @@ html {
 
 
 .nav_bar {
+    
     display: flex;
     width: 100%;
     justify-content: center;
@@ -124,6 +125,7 @@ button.home{
 .question-page{
     display: grid;
     grid-template-columns: 1fr 10fr;
+    margin-top: 30px;
 
 }
 
