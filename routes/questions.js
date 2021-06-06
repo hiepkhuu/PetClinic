@@ -12,9 +12,12 @@ router.get('/', asyncHandler(async(req, res)=>{
   //   include: Answer
   // })
   //  res.render('questions-list', {questions});
-  const questions = await Question.findAll()
+  const questions = await Question.findAll( {
+    include: User,
+  })
 
-  res.render('index', { questions, title: '' });
+
+  res.render('index', { questions,  title: '' });
 }))
 
 //get Q with id and render Q + answers
