@@ -8,6 +8,14 @@ html {
     font-family: 'Helvatica Neue'
 }
 
+@media screen and (max-width: 800px) {
+    .search-box{
+        visibility: hidden;
+    }
+    /* .btn.guest {
+        visibility: hidden;
+    } */
+}
 
 .nav_bar {
     position:fixed;
@@ -19,6 +27,7 @@ html {
     box-sizing: border-box;
     height: 55px;
     color: rgb(39, 39, 39);
+    box-shadow: 0px 0px 5px 1px #747373;
 }
 /*
 .nav_bar:hover{
@@ -49,6 +58,7 @@ button {
    color: white;
    font-weight: bold;
    font-size: large;
+   box-shadow: 0px 0px 2px 1px #2a9221;
 
 }
 
@@ -92,6 +102,7 @@ button.home{
     height: 40px;
     font-family: inherit;
     border-radius: 5px;
+    box-shadow: 0px 0px 2px 1px #2a9221;
 }
 
 .btn.entry.logout{
@@ -122,6 +133,8 @@ button.home{
     max-width: 200px;
     border-right: 1px solid rgb(204, 204, 204);
     margin-top: 25px;
+    /* background-color: white; */
+
 }
 
 .side-bar.btn{
@@ -129,11 +142,14 @@ button.home{
     display: flex;
     justify-content: start;
     min-width: 140px;
-    width: 100%;
+    /* width: 100%; */
+    margin-right: 30px;
     padding: 8px 5px 8px 10px;
     background-color: white;
     color: black;
     text-decoration: none;
+    box-shadow: 0px 0px 5px 1px #747373;
+    border-radius: 5px;
 }
 .side-bar.btn:hover{
     background-color: #d3d3d3
