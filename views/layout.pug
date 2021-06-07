@@ -16,7 +16,7 @@ body
         image(class='favicon' src='/images/logo.png')
      div
       a(href='/')
-          button(class='btn home') StockFlow~
+          button(class='btn home') StockFlow
      div
        a(href=`/questions/`)
           button(class='btn question') Questions
@@ -28,12 +28,14 @@ body
      div
        form(action="/users/logout", method="post")
          button(type="submit" class='btn entry logout') Logout
+     div(class='login-user-message')
+        p Hello #{user.username}, this is your homepage
    else
     div
         image(class='favicon' src='/images/logo.png')
     div
       a(href='/')
-          button(class='btn home') StockFlow~
+          button(class='btn home') StockFlow
     div
       a(href=`/questions/`)
           button(class='btn question') Questions

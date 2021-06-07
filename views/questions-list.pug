@@ -4,8 +4,6 @@ div(class='question-page')
     if questions
           div(class='side-bar')
                div(class='user-message')
-                  if locals.authenticated
-                     p Hello #{user.username}, this is your homepage
                a(href='/' class='side-bar btn') Home
           div(class='questions-list-container')
              div(class='questions-box')
