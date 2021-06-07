@@ -3,17 +3,36 @@ extends index.pug
 include utils.pug
 
 block content
+  div(class='sign-up-page')
     +validationErrorSummary(errors)
-    form(action="/users/register", method="post")
-      input(type="hidden", name="_csrf", value=csrfToken)
-      label(for="username") Display name
-      input(type="text" name="username" id="username" value=user.username)
-      label(for="email") Email
-      input(type="text" name="email" id="email" value=user.email)
-      label(for="professionalUser") Is Professional User
-      input(type="checkbox" name="professionalUser" id="professionalUser" checked=user.professionalUser)
-      label(for="password") Password
-      input(type="password" name="password" id="password")
-      label(for="confirmPassword") Confirm Password
-      input(type="password" name="confirmPassword" id="confirmPassword")
-      button(type="submit") Sign up
+    div(class='signup-form-container')
+        form(class='signup-form' action="/users/register", method="post")
+          div
+            input(type="hidden", name="_csrf", value=csrfToken)
+          div(class='signup name')
+            div(class='signup label')
+              label(for="username") Display name
+            div(class='signup input')
+              input(type="text" name="username" id="username" value=user.username)
+          div(class='signup email')
+            div(class='signup label')
+              label(for="email") Email
+            div(class='signup input')
+              input(type="text" name="email" id="email" value=user.email)
+          div(class='signup professionaluser')
+            div(class='signup label')
+              label(for="professionalUser") Is Professional User
+            div(class='signup checkbox')
+              input(type="checkbox" name="professionalUser" id="professionalUser" checked=user.professionalUser)
+          div(class='signup password')
+            div(class='signup label')
+              label(for="password") Password
+            div(class='signup input')
+              input(type="password" name="password" id="password")
+          div(class='signup confirmpassword')
+            div(class='signup label')
+              label(for="confirmPassword") Confirm Password
+            div(class='signup input')
+              input(type="password" name="confirmPassword" id="confirmPassword")
+          div(class='signup button')
+            button(type="submit") Sign up

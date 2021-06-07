@@ -3,10 +3,18 @@ extends index.pug
 include utils.pug
 
 block content
-  +validationErrorSummary(errors)
-  form(action=`/questions/${id}/answers` method='post')
-        input(type='hidden', name='_csrf' value=csrfToken)
-        label(for='answer') Answer
-        textarea(name='answer', cols='30', rows='10')
-        button(type='submit') Submit Answer
-        a(href='/') Cancel
+  div(class='answers-form-page')
+      +validationErrorSummary(errors)
+      div(class='answers-form-container')
+        div(class='answers-form-box')
+            form(class='answers-form' action=`/questions/${id}/answers` method='post')
+              div
+                  input(type='hidden', name='_csrf' value=csrfToken)
+              div(class='answer-label')
+                  label(for='answer') Answer
+              div(class='answer-form-textarea')
+                  textarea(name='answer', rows=10 cols=58)
+              div
+                  button( class='submit-answer-button' type='submit') Submit Answer
+              div(class='answer-cancel-label')
+                  a(href='/') Cancel

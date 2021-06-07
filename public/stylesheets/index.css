@@ -15,14 +15,18 @@ html {
     align-items: flex-start;
     width: 100%;
     justify-content: center;
-    background-color: #000000;
+    background-color: #181818;
     box-sizing: border-box;
     height: 55px;
-    color: black;
+    color: rgb(39, 39, 39);
 }
+/*
+.nav_bar:hover{
+    background-color: white;
+} */
 
 body{
-    background-color:white;
+    background-color:rgb(204, 204, 204);
 }
 
 .search-box{
@@ -30,7 +34,7 @@ body{
     margin: 9px;
     height: 35px;
     border-radius: 2px;
-    width: auto;
+    width: 300px;
 }
 .search-container{
     margin-right: 5px;
@@ -40,9 +44,11 @@ button {
    height: 30px;
    margin: 0px 3px 0px 0px;
    padding: 6px 16px;
-   background-color: #000000;
+   background-color: #181818;
    border: 0;
    color: white;
+   font-weight: bold;
+   font-size: large;
 
 }
 
@@ -57,6 +63,7 @@ button.homepage {
 }
 button:hover{
     background-color:  #2c2c2c;
+    /* background-color: white; */
 
 }
 button.home{
@@ -84,18 +91,27 @@ button.home{
     color: black;
     height: 40px;
     font-family: inherit;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
+.btn.entry.logout{
+    margin-top: 7px;
+}
+
+
 .btn.ask-question{
-    position: relative;
+    /* position: relative; */
     height: 4opx;
     justify-content: flex-end;
     background-color: rgb(86, 205, 50);
-    border-radius: 1px;
+    border-radius: 2px;
     color: black;
     height: 40px;
     font-family: inherit;
+    margin-right: 50px;
+    /* border: 2px solid rgb(64, 161, 34); */
+
+
 }
 
 .btn.ask-question:hover{
@@ -104,12 +120,12 @@ button.home{
 
 .side-bar{
     max-width: 200px;
-    border-right: 1px solid #dad9d9;
+    border-right: 1px solid rgb(204, 204, 204);
     margin-top: 25px;
 }
 
 .side-bar.btn{
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     justify-content: start;
     min-width: 140px;
@@ -127,7 +143,8 @@ button.home{
 
 .question-page{
     display: grid;
-    grid-template-columns: 1fr 10fr;
+    grid-template-columns: 1fr 10fr 1fr;
+    margin-bottom: 300px;
 
 
 }
@@ -141,10 +158,12 @@ button.home{
     margin-top: 90px;
     display: flex;
     justify-content: center;
-    border: 10px;
+    border: 10px ;
     background-color: white;
     padding: 24px;
-    
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px #747373;
 }
 
 
@@ -158,10 +177,13 @@ button.home{
 .row,
 .row.question{
     display: flex;
-    border-bottom: 1px solid #dad9d9;
+    border-bottom: 1px solid rgb(204, 204, 204);
     margin: 10px;
 }
 
+.row p{
+    font-size: 20px
+}
 .row.question{
     height: 130px;
 }
@@ -185,6 +207,7 @@ button.home{
 .question-link-container{
     display: flex;
     width: 100%;
+
     /* justify-content: flex-end */
 }
 .question-link-btn{
@@ -202,7 +225,8 @@ button.home{
 .q-date-auth-box p{
     margin: 10px;
     font-size: small;
-    color: rgb(114, 113, 113)
+    color: rgb(114, 113, 113);
+    max-width: 200px
 }
 
 #number{
@@ -215,45 +239,220 @@ button.home{
     margin: 10px;
 }
 
-/* .question-row.btn {
 
-} */
 .footer{
     display:flex;
+    position: fix;
     align-items: flex-end;
-    background-color: #000000;
+    background-color: #181818;
     color: white;
 
 }
 
 
+/* LOGIN PAGE */
+.log-in-page{
+    display: flex;
+    justify-content: center
+}
 
-/*
+.login-form-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
 
-div(class='question-page')
-    if questions
-          div(class='side-bar')
-               a(href='/')
-                      button(class='side-bar btn') home
-          div(class='questions-list-container')
-             div(class='questions-box')
-                 div(class='questions-header')
-                   div(class='question-button-container')
-                       h1 All Questions
-                   div(class='ask-button-container')
-                      a(href=`/questions/add`)
-                          button(class='btn ask-question') Ask Question
+}
 
-                 div
-                    p Top 5 questions
-                 div(class='')
-                    table(class='questions')
-                      thead(class='questionHead')
-                         tr
-                           th
-                      tbody(class='questionbody')
-                         each question in questions
-                               tr(class='question-row')
-                                  td: a(class='question' href=`/questions/${question.id}`)
-                                          button(class='question-row btn') #{question.question}
-    else */
+.login-form{
+    position: absolute;
+    margin-top: 80px;
+    width: 300px;
+    padding: 30px;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px #747373;
+    background-color: white;
+}
+
+.login {
+    margin-top: 5px;
+    display: grid;
+    grid-template-rows: 1fr;
+    font-weight: bold
+}
+
+
+.login.input {
+    width: 100%;
+    margin-top: 1px;
+    margin-left: 0px;
+    height: 30px;
+}
+
+
+.login button{
+    height: 40px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.login button:hover{
+    background-color: #2c2c2c
+}
+
+.signup-link{
+    color: rgb(67, 161, 39);
+    margin-left: 5px;
+}
+
+/* SIGNUP PAGE */
+.sign-up-page{
+    padding: 70px;
+}
+
+.signup-form-container{
+   display: flex;
+   justify-content: center;
+
+}
+
+.signup-form{
+    /* position: absolute; */
+    margin-top: 80px;
+    width: 300px;
+    padding: 30px;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px #747373;
+    background-color: white;
+}
+.signup {
+    margin-top: 5px;
+    display: grid;
+    grid-template-rows: 1fr;
+    font-weight: bold
+}
+
+.signup.link{
+    margin-top: 20px;
+}
+
+.signup.input,
+.signup.checkbox {
+
+    width: 100%;
+    margin-top: 1px;
+    margin-left: 0px;
+    height: 30px;
+}
+
+
+.signup button{
+    height: 40px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.signup button:hover{
+    background-color: #2c2c2c
+}
+
+/* USER HOMEPAGE */
+
+
+
+/* SINGLE QUESTION PAGE */
+
+.question-container-page{
+    display:flex;
+    justify-content: center
+}
+
+.question-container{
+    margin-top:  80px;
+}
+
+.question-box{
+    background-color: white;
+    height: auto;
+    width: 800px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.answer-box{
+    border-top: 1px solid rgb(177, 174, 174)
+}
+
+
+/* QUESTION_FORM(AKA ASK QUESTION) */
+.question-form-page{
+    display: flex;
+    justify-content: center;
+}
+.question-form-box{
+    margin-top: 100px;
+}
+
+.question-form-textarea{
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.question-form{
+    margin-top: 80px;
+    width: 500px;
+    padding: 30px;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px #747373;
+    background-color: white;
+
+}
+.question-label{
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: large
+}
+.submit-question-button{
+    border-radius: 5px
+}
+
+
+/* ANSWER_FORM(ANSWER) */
+.answers-form-page{
+    display: flex;
+    justify-content: center;
+}
+.answers-form-box{
+    margin-top: 100px;
+}
+
+.answer-form-textarea{
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.answers-form{
+    margin-top: 80px;
+    width: 500px;
+    padding: 30px;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px #747373;
+    background-color: white;
+
+}
+.answer-label{
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: large
+}
+
+.answer-cancel-label{
+    margin-top: 15px;
+}
+
+.submit-answer-button{
+    border-radius: 5px
+}

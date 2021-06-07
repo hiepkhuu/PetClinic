@@ -1,11 +1,13 @@
 extends layout.pug
 
 block content
-  div(class='question-container')
-      h1  #{questions.question}
-        ul
-          each answer in questions.Answers
-              li #{answer.answer}
-  div
-    a(href=`/questions/${questions.id}/answers`)
-      button Answer
+  div(class='question-container-page')
+    div(class='question-container')
+        div(class='question-box')
+            h1  #{questions.question}
+                each answer in questions.Answers
+                  div(class='answer-box')
+                    p #{answer.answer}
+        div
+          a(href=`/questions/${questions.id}/answers`)
+            button(class='btn ask-question') Answer

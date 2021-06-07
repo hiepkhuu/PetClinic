@@ -1,16 +1,27 @@
-extends index.pug
+extends layout.pug
 
 include utils.pug
 
 block content
-    +validationErrorSummary(errors)
-    form(action="/users/login", method="post")
-      input(type="hidden", name="_csrf", value=csrfToken)
-      label(for="email") Email
-      input(type="text" name="email" id="email" )
-      label(for="password") Password
-      input(type="password" name="password" id="password")
-      button(type="submit") Log In
-    div
-      p Don't have an account?
-        a(href='/users/register') Sign Up
+      div(class='log-in-page')
+        +validationErrorSummary(errors)
+        div(class='login-form-container')
+            form(class='login-form' action="/users/login", method="post")
+              div
+                input(type="hidden", name="_csrf", value=csrfToken)
+              div(class='login email')
+                div
+                  label(for="email") Email
+                div(class='login input')
+                  input(type="text" name="email" id="email" )
+              div(class='login password')
+                div
+                  label(for="password") Password
+                div(class='login input')
+                  input(type="password" name="password" id="password")
+              div(class='login button')
+                button(type="submit") Log In
+              div(class='signup link')
+              p Don't have an account?
+                a(href='/users/register')
+                  span(class='signup-link') Sign Up
