@@ -13,6 +13,8 @@ body
   header(class='nav_bar')
    if locals.authenticated
      div
+        image(class='favicon' src='/images/logo.png')
+     div
       a(href='/')
           button(class='btn home') StockFlow~
      div
@@ -27,6 +29,8 @@ body
        form(action="/users/logout", method="post")
          button(type="submit" class='btn entry logout') Logout
    else
+    div
+        image(class='favicon' src='/images/logo.png')
     div
       a(href='/')
           button(class='btn home') StockFlow~

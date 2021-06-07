@@ -8,6 +8,10 @@ html {
     font-family: 'Helvatica Neue'
 }
 
+.favicon{
+    width: 55px;
+    height: 55px;
+}
 @media screen and (max-width: 800px) {
     .search-box{
         visibility: hidden;
@@ -38,6 +42,7 @@ body{
     background-color:rgb(204, 204, 204);
 }
 
+
 .search-box{
     display:flex;
     margin: 9px;
@@ -58,7 +63,7 @@ button {
    color: white;
    font-weight: bold;
    font-size: large;
-   box-shadow: 0px 0px 2px 1px #2a9221;
+
 
 }
 
@@ -102,7 +107,7 @@ button.home{
     height: 40px;
     font-family: inherit;
     border-radius: 5px;
-    box-shadow: 0px 0px 2px 1px #2a9221;
+
 }
 
 .btn.entry.logout{
@@ -121,6 +126,7 @@ button.home{
     font-family: inherit;
     margin-right: 50px;
     /* border: 2px solid rgb(64, 161, 34); */
+    box-shadow: 0px 0px 2px 1px #2a9221;
 
 
 }
