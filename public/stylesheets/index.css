@@ -3,6 +3,10 @@ h1 {
     color: #555555;
 
 }
+/*
+body {
+    padding-top: 65px;
+} */
 
 html {
     font-family: 'Helvatica Neue'
@@ -395,8 +399,20 @@ button.home:hover{
 }
 
 /* USER HOMEPAGE */
+.questions-answers-container{
+    display:grid;
+    grid-template-rows: auto;
+    background-color: white;
 
+}
+.user-homepage-container{
+    padding-top: 90px;
 
+}
+.profile-container{
+    display: flex;
+    background-color: white;
+}
 
 /* SINGLE QUESTION PAGE */
 
@@ -442,7 +458,7 @@ button.home:hover{
     margin-top: 80px;
     width: 500px;
     padding: 30px;
-    
+
     border-radius: 10px;
     box-shadow: 0px 0px 10px 3px #b1b1b1;
     background-color: white;

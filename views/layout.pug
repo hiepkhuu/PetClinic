@@ -29,7 +29,7 @@ body
        form(action="/users/logout", method="post")
          button(type="submit" class='btn entry logout') Logout
      div(class='login-user-message')
-        p Hello #{user.username}, this is your homepage
+        p Hello #{user.username}
    else
     div
         image(class='favicon' src='/images/logo.png')
