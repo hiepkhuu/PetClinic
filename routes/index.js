@@ -12,16 +12,6 @@ router.get('/', asyncHandler(async (req, res, next)=> {
   } );
  console.log(questions)
 
-  // questions.forEach(question => {
-  //   question.User = question.User.userName;
-  // });
-
-
-
-  // const user = await User.findAll();
-
-
-
   res.render('index', { questions, title: 'Questions' });
 }));
 
