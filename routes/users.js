@@ -17,15 +17,15 @@ router.get('/homepage',  asyncHandler(async(req, res)=> {//this is user homepage
       include: [Answer, Question]
     })
 
-
   const questions = user.Questions;
+
   const answers = user.Answers;
   const professional = user.professionalUser
   // const questions = await Question.findByPk(userId, {
   //   include: Answer
   // })
 
-    res.render('user-homepage',{ answers, questions, user, professional});
+    res.render('user-homepage',{ answers, questions,  user, professional});
 
 
 }));

@@ -32,7 +32,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(session({
-  name: 'stock_flow.sid', //multiple apps running on server. preent multiple uses
+  name: 'pet_flow.sid', //multiple apps running on server. preent multiple uses
   secret: sessionSecret,
   resave: false,
   saveUninitialized: false,
