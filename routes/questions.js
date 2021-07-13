@@ -6,26 +6,24 @@ const {requireAuth} = require("../auth");
 const {Question, Answer, User} = require("../db/models");
 
 
-//just get questions
-router.get('/', asyncHandler(async(req, res)=>{
-  // const questions = await Question.findByPk(req.params.id, {
-  //   include: Answer
-  // })
-  //  res.render('questions-list', {questions});
-  const questions = await Question.findAll( {
-    include: User,
-  })
-
-
-  res.render('index', { questions,  title: '' });
-}))
-
 //get Q with id and render Q + answers
 router.get('/:id(\\d+)', asyncHandler(async(req, res)=>{
   const questions = await Question.findByPk(req.params.id, {
     include: Answer
   })
-   res.render('single-question-page', {questions});
+  const questionId = questions.id;
+  const questionUserId = questions.userId;
+  const userQ = await User.findByPk(questionUserId);
+  const answer = await Answer.findOne({where: {questionId}});
+
+  if (!answer) {
+    res.render("single-question-page", {questions, userQ});
+  }
+
+  const answerUserId = answer.userId;
+  const userA = await User.findByPk(answerUserId);
+
+  res.render('single-question-page', {questions, userQ, userA});
 }))
 
 const questionValidator = [
