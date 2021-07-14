@@ -8,6 +8,7 @@ const downVoteAns = document.querySelectorAll(".answer-downvote-button");
 for (let i = 0; i < upVote.length; i++) {
     upVote[i].addEventListener("click", async (e) => {
         //extract id number from upvote button
+        e.preventDefault()
         const upVoteArr = upVote[i].id.split("-");
         const idNum = parseInt(upVoteArr[upVoteArr.length - 1]);
         const counter = document.getElementById(`question-counter-${idNum}`);
@@ -22,6 +23,7 @@ for (let i = 0; i < upVote.length; i++) {
 
     downVote[i].addEventListener("click", async (e) => {
         //extract id number from downvote button
+        e.preventDefault()
         const downVoteArr = downVote[i].id.split("-");
         const idNum = parseInt(downVoteArr[downVoteArr.length - 1]);
         const counter = document.getElementById(`question-counter-${idNum}`);
