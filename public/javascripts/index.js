@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", (event)=>{
             const idNum = parseInt(upVoteArr[upVoteArr.length - 1]);
             const counter = document.getElementById(`question-counter-${idNum}`);
 
-            const result = await fetch(`/voting/upvote/question/${idNum}`, {
+            const result = await fetch(`/votes/upvote/question/${idNum}`, {
                 method: "PATCH"
             });
             const json = await result.json();
@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", (event)=>{
             const idNum = parseInt(downVoteArr[downVoteArr.length - 1]);
             const counter = document.getElementById(`question-counter-${idNum}`);
 
-            const result = await fetch(`/voting/downvote/question/${idNum}`, {
+            const result = await fetch(`/votes/downvote/question/${idNum}`, {
                 method: "PATCH"
             });
             const json = await result.json();
@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", (event)=>{
             const idNum = parseInt(upVoteArr[upVoteArr.length - 1]);
             const counter = document.getElementById(`answer-counter-${idNum}`);
 
-            const result = await fetch(`/voting/upvote/answer/${idNum}`, {
+            const result = await fetch(`/votes/upvote/answer/${idNum}`, {
                 method: "PATCH"
             });
             const json = await result.json();
@@ -59,7 +59,7 @@ window.addEventListener("DOMContentLoaded", (event)=>{
             const idNum = parseInt(downVoteArr[downVoteArr.length - 1]);
             const counter = document.getElementById(`answer-counter-${idNum}`);
 
-            const result = await fetch(`/voting/downvote/answer/${idNum}`, {
+            const result = await fetch(`/votes/downvote/answer/${idNum}`, {
                 method: "PATCH"
             });
 
@@ -70,4 +70,3 @@ window.addEventListener("DOMContentLoaded", (event)=>{
     }
 
 });
-
