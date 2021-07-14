@@ -17,17 +17,17 @@ block content
           div(class='questions-answers-container')
             div(class='users-question-box')
               h1 Questions
-                if !questions
-                  p you havne no questions
+                if (questions.length === 0)
+                     li you havne no questions
                 else
-                  each question in questions
-                      li #{question.question}
+                    each question in questions
+                        li #{question.question}
               //- if (questions === undefined)
               //-    p questions will show here
             div(class='users-answers-box')
               h1 Answers
-                if !answers
-                  p you have no answers
+                if (answers.length === 0)
+                  li you have no answers
                 else
                   each answer in answers
                       li #{answer.answer}

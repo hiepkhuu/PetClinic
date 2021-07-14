@@ -18,7 +18,6 @@ router.get('/homepage',  asyncHandler(async(req, res)=> {//this is user homepage
     })
 
   const questions = user.Questions;
-
   const answers = user.Answers;
   const professional = user.professionalUser
   // const questions = await Question.findByPk(userId, {
