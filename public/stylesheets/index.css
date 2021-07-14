@@ -420,6 +420,11 @@ button.home:hover{
     min-height: 300px
 
 }
+
+.profile-headshot{
+    height: 100px;
+    width: auto;
+}
 .user-homepage-container{
     padding-top: 90px;
 
