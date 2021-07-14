@@ -403,6 +403,7 @@ button.home:hover{
     display:grid;
     grid-template-rows: auto;
     background-color: white;
+    min-height: 300px
 
 }
 .user-homepage-container{
@@ -412,13 +413,15 @@ button.home:hover{
 .profile-container{
     display: flex;
     background-color: white;
+
 }
 
 /* SINGLE QUESTION PAGE */
 
 .question-container-page{
     display:flex;
-    justify-content: center
+    justify-content: center;
+
 }
 
 .question-container{
