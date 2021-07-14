@@ -25,10 +25,11 @@ div(class='question-page')
                                           button(class="question-upvote-button")
                                              i(class="fas fa-chevron-up")
                                        div(class='span')
-                                          span(id='number') 0
+                                          span(class='number' id=`question-counter-${question.id}`) #{question.voteCount}
                                        if locals.authenticated
-                                          button(class="question-downvote-button")
-                                             <i class="fas fa-chevron-down"></i>
+                                          form(action='/voting/downvote/question' method='PATCH')
+                                             button(class="question-downvote-button")
+                                                i(class="fas fa-chevron-down" id=`question-downvote-${question.id}`)
                                        div(class='span')
                                           span votes
                                     div(class='answer-box')
