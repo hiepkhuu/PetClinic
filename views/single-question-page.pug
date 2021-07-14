@@ -1,37 +1,13 @@
 extends layout.pug
 
 block content
-  //- div(class='question-container-page')
-  //-   div(class='question-container')
-  //-       div(class='question-box')
-  //-           h1  #{questions.question}
-  //-               each answer in questions.Answers
-  //-                 div(class='answer-box')
-  //-                   p #{answer.answer}
-  //-       div
-  //-         a(href=`/questions/${questions.id}/answers`)
-  //-           button(class='btn ask-question') Answer
-
-
-
-  //- div(class='singe-question-page')
-  //-   div(class='side-bar')
-  //-     div(class='user-message')
-  //-     a(href='/' class='side-bar btn') Home
-          a(href='/' class='side-bar btn') Questions
-          p Public
-  //-   div(class='questions-list-container')
-  //-     div(class='questions-box')
-  //-       div(class='questions-header')
-  //-         div(class='question-button-container')
-  //-           h1 #{questions.question}
-  //-         div(class='ask-button-container')
-  //-           a(href='/users/register')
-  //-             button(class='btn ask-question') Ask Question
-
-  div(class="page-container")
-    div(class='side-bar')
-      div(class='user-message')
-        a(href='/' class='side-bar btn') Home
-        a(href='/' class='side-bar btn') Questions
-        p Public
+  div(class='question-container-page')
+    div(class='question-container')
+        div(class='question-box')
+            h1  #{questions.question}
+                each answer in questions.Answers
+                  div(class='answer-box')
+                    p #{answer.answer}
+        div
+          a(href=`/questions/${questions.id}/answers`)
+            button(class='btn ask-question') Answer
