@@ -13,8 +13,6 @@ router.get('/', asyncHandler(async (req, res, next)=> {
     limit: 10
   });
 
-  console.log(questions)
-
   questions.forEach(question => {
     question.User = question.User.dataValues.username
   })
