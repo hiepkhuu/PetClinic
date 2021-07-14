@@ -33,7 +33,7 @@ html {
     display: flex;
     align-items: flex-start;
     width: 100%;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #181818;
     box-sizing: border-box;
     height: 55px;
@@ -168,6 +168,7 @@ button.home:hover{
     min-width: 140px;
     /* width: 100%; */
     /* margin-right: 30px; */
+    /* border: 0px; */
     padding: 8px 5px 8px 10px;
     background-color: white;
     color: black;
@@ -317,13 +318,30 @@ button.home:hover{
     margin-top: 100px;
 
 }
-
-.login-user-message{
+.right-corner-buttons{
+    display:flex
+}
+.nav-user-greeting{
     color: white;
-    max-width: 200px;
+    padding: 10px;
     font-size: small;
-    padding-left: 15px;
-    min-width: 50px;
+    height:50px;
+
+}
+.nav-user-greeting p {
+    margin: 0px;
+}
+.nav-profile-headshot{
+    width: 40px;
+    margin-top:10px;
+    height: 40px;
+}
+.user-homepage-link-container{
+    font-size: small;
+    width:auto;
+    /* padding-left: 15px; */
+    height: 51px;
+    /* min-width: 50px; */
 }
 .login-form{
     position: absolute;
