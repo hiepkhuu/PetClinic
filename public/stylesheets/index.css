@@ -3,10 +3,10 @@ h1 {
     color: #555555;
 
 }
-/*
+
 body {
-    padding-top: 65px;
-} */
+    min-width: 480px;
+}
 
 html {
     font-family: 'Helvatica Neue'
@@ -16,14 +16,17 @@ html {
     width: 55px;
     height: 55px;
 }
+
 @media screen and (max-width: 800px) {
     .search-box{
-        visibility: hidden;
+       width:50px
     }
-    /* .btn.guest {
-        visibility: hidden;
-    } */
-}
+
+    .btn.guest { display: none; }
+    .btn.question { display: none; }
+    .btn.home { display: none; }
+
+ }
 
 .nav_bar {
     position:fixed;
@@ -52,7 +55,7 @@ body{
     margin: 9px;
     height: 35px;
     border-radius: 2px;
-    width: 300px;
+    max-width: 300px;
 }
 .search-container{
     margin-right: 5px;
@@ -108,13 +111,15 @@ button.home:hover{
 }
 .btn.entry{
     position: relative;
-    height: 4opx;
+    height: 40px;
     justify-content: flex-end;
     background-color: rgb(86, 205, 50);
     border-radius: 1px;
     color: black;
     height: 40px;
     font-family: inherit;
+    font-size:small;
+    padding: 5px;
     border-radius: 5px;
 
 }
@@ -126,14 +131,15 @@ button.home:hover{
 
 .btn.ask-question{
     /* position: relative; */
-    height: 4opx;
     justify-content: flex-end;
     background-color: rgb(86, 205, 50);
     border-radius: 2px;
     color: black;
+    font-size: small;
     height: 40px;
     font-family: inherit;
     margin-right: 50px;
+    padding: 5px;
     /* border: 2px solid rgb(64, 161, 34); */
     box-shadow: 0px 0px 2px 1px #2a9221;
 
