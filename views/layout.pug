@@ -23,14 +23,17 @@ body
           button(class='btn question') Questions
      div(class='search-container')
       input(type='search' class='search-box')
-     div
-       a(href='/users/homepage')
-          button(class='btn homepage') Homepage
-     div
-       form(action="/users/logout", method="post")
-         button(type="submit" class='btn entry logout') Logout
-     div(class='login-user-message')
-        p Hello #{user.username}
+     div(class='right-corner-buttons')
+        div(class='user-homepage-link-container')
+            a(href='/users/homepage')
+              img(src='/images/doctor-profile-icon.png' class='nav-profile-headshot')
+        div(class='nav-user-greeting')
+          p Hello,
+          p #{user.username}
+        div
+          form(action="/users/logout", method="post")
+            button(type="submit" class='btn entry logout') Logout
+
    else
     div
         image(class='favicon' src='/images/logo.png')
