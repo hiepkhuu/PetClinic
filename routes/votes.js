@@ -6,7 +6,7 @@ const {requireAuth} = require("../auth");
 
 router.patch("/upvote/question/:id(\\d+)", requireAuth, asyncHandler(async (req, res) => {
     const question = await Question.findByPk(req.params.id);
-
+    console.log("QUESTION           :", question)
 
     question.voteCount += 1;
     question.save({fields: ["voteCount"]});
@@ -16,6 +16,7 @@ router.patch("/upvote/question/:id(\\d+)", requireAuth, asyncHandler(async (req,
 
 router.patch("/downvote/question/:id(\\d+)", requireAuth, asyncHandler(async (req, res) => {
     const question = await Question.findByPk(req.params.id);
+    console.log(question)
 
     question.voteCount -= 1;
     question.save({fields: ["voteCount"]});
