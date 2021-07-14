@@ -11,16 +11,27 @@ block content
   //-       div
   //-         a(href=`/questions/${questions.id}/answers`)
   //-           button(class='btn ask-question') Answer
-  div(class='question-page')
+
+
+
+  //- div(class='singe-question-page')
+  //-   div(class='side-bar')
+  //-     div(class='user-message')
+  //-     a(href='/' class='side-bar btn') Home
+          a(href='/' class='side-bar btn') Questions
+          p Public
+  //-   div(class='questions-list-container')
+  //-     div(class='questions-box')
+  //-       div(class='questions-header')
+  //-         div(class='question-button-container')
+  //-           h1 #{questions.question}
+  //-         div(class='ask-button-container')
+  //-           a(href='/users/register')
+  //-             button(class='btn ask-question') Ask Question
+
+  div(class="page-container")
     div(class='side-bar')
       div(class='user-message')
-      a(href='/' class='side-bar btn') Home
-    div(class='questions-list-container')
-      div(class='questions-box')
-        div(class='questions-header')
-          div(class='question-button-container')
-            h1 #{questions.question}
-          if !locals.authenticated
-          div(class='ask-button-container')
-            a(href='/users/register')
-              button(class='btn ask-question') Ask Question
+        a(href='/' class='side-bar btn') Home
+        a(href='/' class='side-bar btn') Questions
+        p Public
