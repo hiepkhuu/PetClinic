@@ -185,8 +185,8 @@ button.home:hover{
 .question-page{
     display: grid;
     grid-template-columns: 1fr 10fr;
-    margin-bottom: 300px;
-
+    /* margin-bottom: 300px; */
+    height: 100vh
 
 }
 

@@ -1,13 +1,26 @@
 extends layout.pug
 
 block content
-  div(class='question-container-page')
-    div(class='question-container')
-        div(class='question-box')
-            h1  #{questions.question}
-                each answer in questions.Answers
-                  div(class='answer-box')
-                    p #{answer.answer}
-        div
-          a(href=`/questions/${questions.id}/answers`)
-            button(class='btn ask-question') Answer
+  //- div(class='question-container-page')
+  //-   div(class='question-container')
+  //-       div(class='question-box')
+  //-           h1  #{questions.question}
+  //-               each answer in questions.Answers
+  //-                 div(class='answer-box')
+  //-                   p #{answer.answer}
+  //-       div
+  //-         a(href=`/questions/${questions.id}/answers`)
+  //-           button(class='btn ask-question') Answer
+  div(class='question-page')
+    div(class='side-bar')
+      div(class='user-message')
+      a(href='/' class='side-bar btn') Home
+    div(class='questions-list-container')
+      div(class='questions-box')
+        div(class='questions-header')
+          div(class='question-button-container')
+            h1 #{questions.question}
+          if !locals.authenticated
+          div(class='ask-button-container')
+            a(href='/users/register')
+              button(class='btn ask-question') Ask Question
