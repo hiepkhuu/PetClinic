@@ -21,7 +21,7 @@ block content
                      li you havne no questions
                 else
                     each question in questions
-                        li #{question.question}
+                        li: a(href=`/questions/${question.id}`)  #{question.question}
               //- if (questions === undefined)
               //-    p questions will show here
             div(class='users-answers-box')
@@ -30,9 +30,8 @@ block content
                   li you have no answers
                 else
                   each answer in answers
-                      li #{answer.answer}
+                    //- h1 #{answer.Question.question}
+                    li #{answer.answer}
 
 
         include footer
-
-
