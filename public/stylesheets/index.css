@@ -16,15 +16,21 @@ html {
     width: 55px;
     height: 55px;
 }
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 800px){
+    .btn.home {display: none; }
+    .search-box{
+        width:100px
+     }
+    .btn.guest { display: none; }
+}
+@media screen and (max-width: 480px) {
     .search-box{
        width:50px
     }
 
     .btn.guest { display: none; }
     .btn.question { display: none; }
-    .btn.home { display: none; }
+    /* .btn.home { display: none; } */
 
  }
 
