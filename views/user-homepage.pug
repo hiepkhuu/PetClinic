@@ -4,21 +4,32 @@ block content
       body
         div(class='user-homepage-container')
           div(class='profile-container')
-            p #{user.username}'s Homepage
-            p | #{user.email}
-            if professional
-              p | Professional User
+            div(class='profile-image-container')
+              p image
+            div(class='profile-info-containers')
+              p ________#{user.username}'s Homepage_____
+              p ________#{user.email}
+              if professional
+                p ________Professional User
+            div(class='user-ask-question')
+              a(href=`/questions/add`)
+                  button(class='btn ask-question') Ask Question
           div(class='questions-answers-container')
             div(class='users-question-box')
               h1 Questions
-                if questions
-                    each question in questions
+                if !questions
+                  p you havne no questions
+                else
+                  each question in questions
                       li #{question.question}
-
+              //- if (questions === undefined)
+              //-    p questions will show here
             div(class='users-answers-box')
               h1 Answers
-                if answers
-                    each answer in answers
+                if !answers
+                  p you have no answers
+                else
+                  each answer in answers
                       li #{answer.answer}
 
 
