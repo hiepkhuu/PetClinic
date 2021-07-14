@@ -173,7 +173,7 @@ button.home:hover{
     color: white;
 }
 
-
+/* Homepage question list */
 
 .question-page{
     display: grid;
@@ -219,11 +219,25 @@ button.home:hover{
     font-size: 20px
 }
 .row.question{
-    height: 130px;
+    height: auto;
 }
 
 .counts-box{
     margin: 10px;
+}
+
+.question-upvote-button{
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    cursor: pointer
+}
+
+.question-downvote-button{
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    cursor: pointer
 }
 
 
