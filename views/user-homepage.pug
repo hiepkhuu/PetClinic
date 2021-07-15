@@ -4,7 +4,9 @@ block content
       body
         div(class='user-homepage-page')
           div(class='user-homepage-sidebar')
-            p this is side bar
+            div(class='user-homepage-home-button')
+              a(href='/' )
+                button Home
           div(class='user-homepage-right-container')
               div(class='profile-container')
                 div(class='profile-image-container')
@@ -15,7 +17,7 @@ block content
                   if professional
                     p Professional User
                 div(class='user-ask-question')
-                  a(href=`/questions/add`)
+                  a(href=`/questions/add` )
                       button(class='btn ask-question') Ask Question
 
               div(class='questions-answers-container')
