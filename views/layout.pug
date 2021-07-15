@@ -13,10 +13,9 @@ body
  div(class='alert-bar')
   header(class='nav_bar')
    if locals.authenticated
-     div
+     div(class='home-left-button')
         image(class='favicon' src='/images/logo.png')
-     div
-      a(href='/')
+        a(href='/')
           button(class='btn home') PetFlow
      div
        a(href=`/`)
@@ -35,11 +34,10 @@ body
             button(type="submit" class='btn entry logout') Logout
 
    else
-    div
-        image(class='favicon' src='/images/logo.png')
-    div
+    div(class='home-left-button')
+      image(class='favicon' src='/images/logo.png')
       a(href='/')
-          button(class='btn home') PetFlow
+            button(class='btn home') PetFlow
     div
       a(href=`/`)
           button(class='btn question') Questions
