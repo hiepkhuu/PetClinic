@@ -64,6 +64,7 @@ body{
 }
 .search-container{
     margin-right: 10px;
+    width: 400px;
 }
 button {
     display: flexbox;
@@ -93,6 +94,10 @@ button:hover{
     /* background-color: white; */
     color:greenyellow
 
+}
+.home-left-button{
+    display: flex;
+    margin-left:10px;
 }
 button.home{
 
@@ -126,6 +131,8 @@ button.home:hover{
     font-size:small;
     padding: 5px;
     border-radius: 5px;
+    width:70px;
+    margin-left: 7px;
 
 }
 
@@ -265,13 +272,9 @@ button.home:hover{
     margin-top: 5px;
 }
 
-.question-link-container{
-    display: flex;
-    width: 100%;
 
-    /* justify-content: flex-end */
-}
-.question-link-btn{
+
+.question-answer-link-btn{
     display: flex;
     width: 100%;
     text-decoration: none;
@@ -340,6 +343,7 @@ button.home:hover{
     width: 40px;
     margin-top:10px;
     height: 40px;
+
 }
 .user-homepage-link-container{
     font-size: small;
@@ -445,26 +449,77 @@ button.home:hover{
 /* USER HOMEPAGE */
 .questions-answers-container{
     display:grid;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
     background-color: white;
-    min-height: 300px
+    min-height: auto;
+    margin-left: 30px;
 
 }
 
 .profile-headshot{
-    height: 100px;
+    height: 200px;
     width: auto;
+    box-shadow: 0px 0px 5px 2px #e4e4e4;
 }
-.user-homepage-container{
-    padding-top: 90px;
+.user-homepage-page{
+    padding-top: 50px;
+    background-color: white;
+    display: grid;
+    min-height: 700px;
+    grid-template-columns: 1fr 10fr;
+}
+.user-homepage-sidebar{
+    border-right: 1px solid rgb(196, 194, 194);
+    padding-top: 30px;
+}
 
+.users-question-box,
+.users-answer-box {
+    margin: 0px 30px 15px 0px;
+    padding-bottom: 15px;
+    /* border-bottom: 1px solid rgb(212, 211, 211) */
+}
+
+.users-answer-box h2,
+.users-question-box h2 {
+    font-weight: 900px;
+    font-size: 20px;
+    border-bottom: 1px solid rgb(212, 211, 211);
+    width: 400px
 }
 .profile-container{
     display: flex;
-    background-color: white;
-
+    padding: 30px;
 }
 
+.user-homepage-right-container{
+    padding-top: 30px;
+}
+
+.user-homepage-link {
+    text-decoration: none;
+    height: 30px;
+    padding: 5px 10px 5px 10px;
+    width: 380px;
+}
+.answer-link-container,
+.question-link-container{
+    display: flex;
+    width: 400px;
+    height: 30px;
+
+    margin: 15px 10px 0px 0px;
+    border-radius: 5px;
+}
+.answer-link-container :hover,
+.question-link-container :hover {
+    box-shadow: 0px 0px 5px 1px #e4e4e4;
+}
+
+.profile-info-containers p,
+.profile-info-containers h1 {
+    padding: 0px 30px 0px 30px;
+}
 /* SINGLE QUESTION PAGE */
 
 .question-container-page{

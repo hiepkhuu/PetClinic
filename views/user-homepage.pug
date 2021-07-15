@@ -2,36 +2,47 @@ extends index.pug
 
 block content
       body
-        div(class='user-homepage-container')
-          div(class='profile-container')
-            div(class='profile-image-container')
-              img(src='/images/doctor-profile-icon.png' class='profile-headshot')
-            div(class='profile-info-containers')
-              p ________#{user.username}'s Homepage_____
-              p ________#{user.email}
-              if professional
-                p ________Professional User
-            div(class='user-ask-question')
-              a(href=`/questions/add`)
-                  button(class='btn ask-question') Ask Question
-          div(class='questions-answers-container')
-            div(class='users-question-box')
-              h1 Questions
-                if (questions.length === 0)
-                     li you havne no questions
-                else
-                    each question in questions
-                        li: a(href=`/questions/${question.id}`)  #{question.question}
-              //- if (questions === undefined)
-              //-    p questions will show here
-            div(class='users-answers-box')
-              h1 Answers
-                if (answers.length === 0)
-                  li you have no answers
-                else
-                  each answer in answers
-                    //- h1 #{answer.Question.question}
-                    li #{answer.answer}
+        div(class='user-homepage-page')
+          div(class='user-homepage-sidebar')
+            p this is side bar
+          div(class='user-homepage-right-container')
+              div(class='profile-container')
+                div(class='profile-image-container')
+                  img(src='/images/doctor-profile-icon.png' class='profile-headshot')
+                div(class='profile-info-containers')
+                  h1 #{user.username}'s Homepage
+                  p #{user.email}
+                  if professional
+                    p Professional User
+                div(class='user-ask-question')
+                  a(href=`/questions/add`)
+                      button(class='btn ask-question') Ask Question
+
+              div(class='questions-answers-container')
+                div(class='users-question-box')
+                  div
+                    h2 Questions
+                  div
+                        if (questions.length === 0)
+                            li you havne no questions
+                        else
+                            each question in questions
+                                //- li: a(href=`/questions/${question.id}`) class='' #{question.question}
+                                div(class='question-link-container')
+                                    a(class='user-homepage-link' href=`/questions/${question.id}`) #{question.question}
+                  //- if (questions === undefined)
+                  //-    p questions will show here
+                div(class='users-answer-box')
+                    div
+                       h2 Answers
+                    div
+                      if (answers.length === 0)
+                        li you have no answers
+                      else
+                        each answer in answers
+                          div(class='answer-link-container')
+                                a(class='user-homepage-link' href=`/questions/${answer.questionId}`) #{answer.answer}
+                          //- li #{answer.answer} link to question
 
 
         include footer
