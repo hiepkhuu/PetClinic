@@ -3,16 +3,19 @@ extends layout.pug
 block content
   div(class='question-container-page')
     div(class='side-bar')
-      p this is a div
+      div(class='user-message')
+      a(href='/' class='side-bar btn') Home
     div(class='question-container')
         div(class='question-box')
-            h1  #{questions.question}
-                each answer in questions.Answers
-                  div(class='answer-box')
-                    p #{answer.answer}
+          div(class="question-header")
+            h1 #{question.question}
             div(class='ask-button-container')
-                      a(href=`/questions/add`)
-                          button(class='btn ask-question') Ask Question
+              a(href=`/questions/add`)
+                button(class='btn ask-question') Ask Question
+          div(class='question-description')
+            div(class="votes-container")
+              div(class='vote-items')
+          //- div(class="description-detail-container")
             //- div
             //-   a(href=`/questions/${questions.id}/answers`)
             //-     button(class='btn ask-question') Answer

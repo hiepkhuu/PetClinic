@@ -8,22 +8,22 @@ const {Question, Answer, User} = require("../db/models");
 
 //get Q with id and render Q + answers
 router.get('/:id(\\d+)', asyncHandler(async(req, res)=>{
-  const questions = await Question.findByPk(req.params.id, {
+  const question = await Question.findByPk(req.params.id, {
     include: Answer
   })
-  const questionId = questions.id;
-  const questionUserId = questions.userId;
+  const questionId = question.id;
+  const questionUserId = question.userId;
   const userQ = await User.findByPk(questionUserId);
   const answer = await Answer.findOne({where: {questionId}});
 
   if (!answer) {
-    res.render("single-question-page", {questions, userQ});
+    res.render("single-question-page", {question, userQ});
   }
 
   const answerUserId = answer.userId;
   const userA = await User.findByPk(answerUserId);
 
-  res.render('single-question-page', {questions, userQ, userA});
+  res.render('single-question-page', {question, userQ, userA});
 }))
 
 const questionValidator = [
