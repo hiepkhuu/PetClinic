@@ -115,7 +115,7 @@ asyncHandler(async(req, res)=>{//creates new user and sotres in db
     user.hashedPassword = hashedPassword;
     await user.save()
     loginUser(req, res, user)
-    res.redirect('/')
+    res.redirect('/users/homepage')
   } else {
     const errors = validatorErrors.array().map((error) => error.msg);
 
@@ -156,7 +156,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
       const passwordMatch = await bcrypt.compare(password, user.hashedPassword.toString());
       if (passwordMatch) {
         loginUser(req, res, user)
-        return res.redirect('/users/homepage')
+        return res.redirect('/')
       }
     }
     errors.push('Login failed for the provided email address and password');
