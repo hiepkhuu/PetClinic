@@ -304,15 +304,29 @@ button.home:hover{
     height: auto;
 }
 
+.fas.fas.fa-chevron-up{
+    width:auto;
+    height: auto;
+}
+.fas.fa-chevron-up:hover{
+    color: rgb(187, 123, 123);
+    background-color: white;
+}
+.fas.fa-chevron-down:hover{
+    color: rgb(187, 123, 123);
+    background-color: white;
+}
 .counts-box{
     margin: 10px;
 }
 
-.question-upvote-button{
+/* .question-upvote-button{
     text-decoration: none;
     background-color: white;
     color: black;
-    cursor: pointer
+    cursor: pointer;
+    height: auto;
+    width: auto;
 }
 
 .question-downvote-button{
@@ -320,7 +334,7 @@ button.home:hover{
     background-color: white;
     color: black;
     cursor: pointer
-}
+} */
 
 
 .vote-box span,
