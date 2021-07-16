@@ -207,11 +207,12 @@ button.home:hover{
     border: 1px solid rgb(212, 212, 212)
 }
 
+/* SIDEBAR */
+
 .side-bar{
-    max-width: 200px;
+    width: auto;
     /* border-right: 1px solid rgb(204, 204, 204); */
     margin-top: 25px;
-
     background-color: white;
     border-right: 1px solid rgb(202, 201, 201)
 }
@@ -256,12 +257,6 @@ button.home:hover{
 
 }
 
-.questions-box{
-    display: flexbox;
-    width: 100%;
-    height: auto;
-}
-
 .questions-list-container{
     display: flex;
     justify-content: center;
@@ -275,7 +270,11 @@ button.home:hover{
     /* box-shadow: 0px 0px 10px 3px #b1b1b1; */
 }
 
-
+.questions-box{
+    display: flexbox;
+    width: 100%;
+    height: auto;
+}
 
 .questions-header{
     height: 60px;
@@ -363,15 +362,44 @@ button.home:hover{
 
 /* FOOTER */
 
-.footer{
+.footer-container{
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 10fr 10fr;
     width: 100%;
     padding: 32px 12px 12px 12px;
-    background-color: #242729;
-
+    background-color: #1d1f1f;
+    height: 200px;
 }
 
+.footer-logo-img {
+    width: 50px;
+    height: 50px;
+}
+
+.name {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 12px;
+    color: #bbc0c4;
+    margin-top: 0px;
+}
+
+.name-li li {
+    list-style: none;
+
+    font-size: 1rem;
+    color: #bbc0c4;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-weight: normal
+}
+
+a {
+    text-decoration: none;
+}
 
 /* LOGIN PAGE */
 .log-in-page{
