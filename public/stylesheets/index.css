@@ -557,19 +557,38 @@ button.home:hover{
     padding-top: 160px;
     margin-top: 15px */
     width: 100%;
-    height: 100vh;
     background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 20fr;
+    margin-top: 30px;
+    border-bottom: 1px solid #e4e6e8;
 }
 
 .vote-container {
     position: relative;
+    grid-template-rows: 1fr 1fr 1fr;
+
+}
+
+.question-span{
+    text-align: center;
+    padding-right: 10px
+}
+
+.question-description-content{
+    grid-template-rows: 1fr 1fr;
+}
+
+.user-info-container{
+    justify-content: flex-end;
+    display:flex;
+    margin-bottom: 30px;
+}
+
+.user-info{
     padding-right: 16px
-
 }
 
-.vote-items{
-
-}
 
 .description-detail-container{
     width: 100%;
