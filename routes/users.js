@@ -20,19 +20,13 @@ router.get('/homepage',  asyncHandler(async(req, res)=> {//this is user homepage
   const questions = user.Questions;
   const answers = user.Answers;
 
-
   answers.forEach(answer => {
     user.Answers = answer.dataValues
   })
-  // questions.forEach(question => {
-  //   question.User = question.User.dataValues.username
-  // })
-  const professional = user.professionalUser
-  // const questions = await Question.findByPk(userId, {
-  //   include: Answer
-  // })
 
-    res.render('user-homepage',{ answers, questions,  user, professional});
+  const professional = user.professionalUser
+
+  res.render('user-homepage',{ answers, questions,  user, professional});
 
 
 }));

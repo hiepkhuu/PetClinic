@@ -7,7 +7,7 @@ block content
       +validationErrorSummary(errors)
       div(class='answers-form-container')
         div(class='answers-form-box')
-            form(class='answers-form' action=`/questions/${id}/answers` method='post')
+            form(class='answers-form' action=`/answers/${id}/answers` method='post')
               div
                   input(type='hidden', name='_csrf' value=csrfToken)
               div(class='answer-label')
