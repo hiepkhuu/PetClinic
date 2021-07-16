@@ -16,7 +16,7 @@ router.get('/:id(\\d+)/answers', csrfProtection,  requireAuth, asyncHandler(asyn
     //   res.render('unauthorized-user')
     // }
     if (user){
-      res.render('answers', { id, title: 'Answer', csrfToken: req.csrfToken()})
+      res.render('single-question-page', { id, title: 'Answer', csrfToken: req.csrfToken()})
     }
 
 
@@ -63,5 +63,5 @@ router.post('/:id(\\d+)/answers', csrfProtection, answersValidators, requireAuth
 
 }))
 
-module.exports = router;
+
 
