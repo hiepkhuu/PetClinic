@@ -38,6 +38,9 @@ block content
                 div(class='user-info')
                   p Asked by: #{userQ.userName} User info
                   //- this is wehre i copied
+          div
+            div(class='answer-header')
+               h2 Answers
           div(class='question-description')
             div(class="votes-container")
               div(class='question-upvote')
@@ -65,3 +68,4 @@ block content
             //- div
             //-   a(href=`/questions/${questions.id}/answers`)
             //-     button(class='btn ask-question') Answer
+          include answers.pug
