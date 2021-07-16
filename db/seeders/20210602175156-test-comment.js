@@ -5,23 +5,23 @@ module.exports = {
 
       return queryInterface.bulkInsert('Comments', [
         {
-        comment: "Really hope you figure this out too.",
+        comment: "I agree with this! As a long time cat owner, I definitely need to put my cats on a diet, same goes with dogs who are more susceptible to weight gain.",
         answerId: 1 ,
         userId: 5,
         createdAt: new Date(),
           updatedAt: new Date(),
       },
       {
-        comment: 'Agreed. Try to do some research and comeback with more specific questions. Happy to answer!',
+        comment: 'Thank you for your answer! This is very knowledgeable. Helped me get my pup right on track',
         answerId: 2 ,
-        userId: 1 ,
+        userId: 6 ,
         createdAt: new Date(),
           updatedAt: new Date(),
       },
       {
-        comment: "Yes, but you should really pull out right now. Doesn't look too hot",
+        comment: "Oh no! I'm going to take my dog to the vet right away for a check up! Thank you for your answer!",
         answerId: 4 ,
-        userId: 2,
+        userId: 6,
         createdAt: new Date(),
           updatedAt: new Date(),
       }

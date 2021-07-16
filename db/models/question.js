@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
      type: DataTypes.INTEGER,
     },
+    title: {
+      allowNull: false,
+      type: DataTypes.STRING(200)
+    },
     question: {
       allowNull: false,
       type: DataTypes.STRING,
@@ -12,7 +16,11 @@ module.exports = (sequelize, DataTypes) => {
     voteCount:{
       allowNull: false,
       type: DataTypes.INTEGER
-    ,}
+    },
+    answerCount: {
+      allowNull: false,
+      type: DataTypes.INTEGER
+    }
   }, {});
   Question.associate = function(models) {
     // associations can be defined here

@@ -13,11 +13,19 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {model: 'Users'}
       },
+      title: {
+        allowNull: false,
+        type: Sequelize.STRING(200)
+      },
       question: {
         allowNull: false,
         type: Sequelize.STRING
       },
       voteCount: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      answerCount: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
