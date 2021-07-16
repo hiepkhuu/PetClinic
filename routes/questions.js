@@ -29,7 +29,10 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res)=>{
 const questionValidator = [
   check('question')
     .exists({checkFalsy: true})
-    .withMessage('Please enter a body.')
+    .withMessage('Please enter in a body.'),
+  check('title')
+    .exists({checkFalsy: true})
+    .withMessage('Please enter in a title')
 ]
 
 //create page so users can enter their questions

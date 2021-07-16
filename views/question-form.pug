@@ -4,9 +4,9 @@ include utils.pug
 
 block content
   if locals.authenticated
-    +validationErrorSummary(errors)
     div(class='question-form-page')
       div(class='question-form-container')
+        +validationErrorSummary(errors)
         div(class="form-header")
           h1 Ask a Public Question
         div(class='question-form')
@@ -26,4 +26,3 @@ block content
               button(class='submit-question-bttn' type='submit') Post your question
   else
     redirect('/users/login')
-
