@@ -253,13 +253,13 @@ button.home:hover{
 .question-page{
     display: grid;
     grid-template-columns: 1fr 6fr;
-    height: 100vh
 
 }
 
 .questions-box{
     display: flexbox;
     width: 100%;
+    height: auto;
 }
 
 .questions-list-container{
@@ -361,13 +361,14 @@ button.home:hover{
     margin: 10px;
 }
 
+/* FOOTER */
 
 .footer{
-    display:flex;
-    position: fix;
-    align-items: flex-end;
-    background-color: #181818;
-    color: white;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+    padding: 32px 12px 12px 12px;
+    background-color: #242729;
 
 }
 
