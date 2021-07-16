@@ -18,7 +18,7 @@ block content
                     p Professional User
                 div(class='user-ask-question')
                   a(href=`/questions/add` )
-                      button(class='btn ask-question') Ask Question
+                      button(class='user-btn ask-question') Ask Question
 
               div(class='questions-answers-container')
                 div(class='users-question-box')
@@ -45,6 +45,4 @@ block content
                           div(class='answer-link-container')
                                 a(class='user-homepage-link' href=`/questions/${answer.questionId}`) #{answer.answer}
                           //- li #{answer.answer} link to question
-
-
-        include footer
+      include footer
