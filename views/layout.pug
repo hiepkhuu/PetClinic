@@ -14,13 +14,12 @@ body
   header(class='nav_bar')
    if locals.authenticated
      div(class='home-left-button')
-        image(class='favicon' src='/images/logo.png')
         a(href='/')
-          button(class='btn home') PetFlow
+          image(class='favicon' src='/images/pet-flow-logo-with-name.png')
      div
        a(href=`/`)
           button(class='btn question') Questions
-     div(class='search-container' style='width: 750px')
+     div(class='search-container')
       input(type='search' class='search-box')
       i(class="fas fa-search" id='search-icon')
      div(class='right-corner-buttons')
@@ -36,15 +35,14 @@ body
 
    else
     div(class='home-left-button')
-      image(class='favicon' src='/images/logo.png')
       a(href='/')
-            button(class='btn home') PetFlow
+          image(class='favicon' src='/images/pet-flow-logo-with-name.png')
     div
       a(href=`/`)
           button(class='btn question') Questions
       a(href='/users/guest')
           button(class='btn guest') Demo Login
-    div(class='search-container' style='width: 650px')
+    div(class='search-container' )
       input(type='search' class='search-box')
       i(class="fas fa-search" id='search-icon')
     div(class='entry-container')

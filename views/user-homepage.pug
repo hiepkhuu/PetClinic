@@ -26,7 +26,7 @@ block content
                     h2 Questions
                   div
                         if (questions.length === 0)
-                            li you havne no questions
+                            p you have no questions
                         else
                             each question in questions
                                 //- li: a(href=`/questions/${question.id}`) class='' #{question.question}
@@ -39,7 +39,7 @@ block content
                        h2 Answers
                     div
                       if (answers.length === 0)
-                        li you have no answers
+                        p you have no answers
                       else
                         each answer in answers
                           div(class='answer-link-container')

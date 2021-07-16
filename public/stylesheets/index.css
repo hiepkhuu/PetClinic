@@ -12,19 +12,22 @@ html {
 }
 
 .favicon{
-    width: 55px;
-    height: 55px;
+    width: 140px;
+    height: 50px;
 }
 @media screen and (max-width: 800px){
     .btn.home {display: none; }
-    .search-box{
+    /* .search-box{
         width:100px
-     }
+     } */
     .btn.guest { display: none; }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 680px) {
     .search-box{
        width:50px
+    }
+    .entry-container{
+        width:100%
     }
 
     .btn.guest { display: none; }
@@ -39,7 +42,8 @@ html {
     align-items: flex-start;
     width: 100%;
     justify-content: center;
-    background-color: #c9c9c9;
+    border-top: 5px solid rgb(187, 123, 123);
+    background-color: white;
     box-sizing: border-box;
     height: 55px;
     color: rgb(39, 39, 39);
@@ -102,11 +106,11 @@ button {
    height: 30px;
    margin: 0px 3px 0px 0px;
    padding: 6px 16px;
-   background-color:  #c9c9c9;
+   background-color:  #ffffff;
+   border-radius: 3px;
    border: 0;
-   color: white;
-   font-weight: bold;
-   font-size: medium;
+   color: #3c4146;
+   font-size: msmall;
 
 
 }
@@ -115,9 +119,9 @@ button.question,
 button.guest,
 button.homepage {
     margin-top: 12px;
-
+    border: 1px solid transparent;
     /* border-color: rgb(255, 255, 255); */
-    border-radius: 7px;
+    border-radius: 3px;
 
 }
 button:hover{
@@ -133,7 +137,7 @@ button:hover{
 }
 button.home{
 
-    height: 55px;
+    height: 50px;
     border-radius: 0;
     font-size: 25px;
     font-weight: 1000;
@@ -152,19 +156,19 @@ button.home:hover{
 
 .entry-container{
     margin: 7px;
+    /* width: 100%; */
 }
 .btn.entry{
     position: relative;
     height: 40px;
     justify-content: flex-end;
-    background-color: rgb(88, 88, 88);
-    border-radius: 1px;
+    background-color: rgb(87, 128, 127);
+    border-radius: 3px;
     color: rgb(255, 255, 255);
     height: 40px;
     font-family: inherit;
     font-size:small;
     padding: 5px;
-    border-radius: 5px;
     width:70px;
     margin-left: 7px;
 
@@ -181,14 +185,15 @@ button.home:hover{
 .btn.ask-question{
     /* position: relative; */
     display: inline-block;
-    background-color: rgb(88, 88, 88);
-    border-radius: 2px;
+    background-color: rgb(87, 128, 127);;
+    border-radius: 3px;
+    border: 1px solid transparent;
     color: rgb(255, 255, 255);
     font-size: small;
-    height: 50px;
-    width: 150px;
+    height: 40px;
+    width: 100px;
     font-family: inherit;
-    margin: 50px 50px 0px 0px;
+    margin: 60px 10px 0px 0px;
     padding: 5px;
     /* border: 1px solid rgb #636363; */
     /* box-shadow: 0px 0px 2px 1px #636363; */
@@ -211,10 +216,19 @@ button.home:hover{
     border-right: 1px solid rgb(202, 201, 201)
 }
 
+.side-bar p{
+    margin: 10px 0px 0px 20px;
+    color: gray;
+    font-size: small
+}
 
+.side-bar a{
+    margin: 20px 0px 0px 30px;
+    text-decoration: none;
+}
 
 .side-bar.btn{
-    margin-top: 65px;
+    margin: 60px 0px 0px 10px;
     display: flex;
     justify-content: start;
     min-width: 140px;
@@ -225,6 +239,7 @@ button.home:hover{
     background-color: white;
     color: black;
     text-decoration: none;
+    border-right: 3px solid rgb(187, 123, 123);
     /* box-shadow: 0px 0px 10px 3px #b1b1b1; */
     /* border-radius: 5px; */
 }
@@ -237,7 +252,7 @@ button.home:hover{
 
 .question-page{
     display: grid;
-    grid-template-columns: 1fr 10fr;
+    grid-template-columns: 1fr 6fr;
     height: 100vh
 
 }
@@ -273,10 +288,13 @@ button.home:hover{
     display: flex;
     border-bottom: 1px solid rgb(204, 204, 204);
     margin: 10px;
+
 }
 
 .row p{
-    font-size: 20px
+    font-size: 30px;
+    font-weight: 300px;
+    margin-top: 0px
 }
 .row.question{
     height: auto;
@@ -318,7 +336,7 @@ button.home:hover{
     display: flex;
     width: 100%;
     text-decoration: none;
-    color: rgb(67, 161, 39)
+    color:  rgb(187, 123, 123);
 }
 .question-date-author-container{
     display: flex;
@@ -380,9 +398,9 @@ button.home:hover{
     margin: 0px;
 }
 .nav-profile-headshot{
-    width: 40px;
+    width: 30px;
     margin-top:10px;
-    height: 40px;
+    height: 30px;
 
 }
 .user-homepage-link-container{
@@ -528,7 +546,7 @@ button.home:hover{
 
 .users-answer-box h2,
 .users-question-box h2 {
-    font-weight: 900px;
+    font-weight: bold;
     font-size: 20px;
     height: 40px;
     border-bottom: 1px solid rgb(212, 211, 211);
@@ -562,18 +580,19 @@ button.home:hover{
 }
 .user-homepage-link {
     text-decoration: none;
-    height: 30px;
+    /* height: 30px; */
     padding: 5px 10px 5px 10px;
-    width: 380px;
+    width: 400px;
+    border-radius: 5px;
 }
 .answer-link-container,
 .question-link-container{
     display: flex;
     width: 400px;
-    height: 30px;
+    /* height: 30px; */
 
     margin: 15px 10px 0px 0px;
-    border-radius: 5px;
+
 }
 .answer-link-container :hover,
 .question-link-container :hover {
