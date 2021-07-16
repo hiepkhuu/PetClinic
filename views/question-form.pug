@@ -3,16 +3,27 @@ extends index.pug
 include utils.pug
 
 block content
-  div(class='question-form-page')
-      +validationErrorSummary(errors)
+  if locals.authenticated
+    +validationErrorSummary(errors)
+    div(class='question-form-page')
       div(class='question-form-container')
-            div(class='question-form-box')
-              form(class='question-form' action='/questions/add' method='post')
-                div
-                  input(type='hidden' name='_csrf' value=csrfToken)
-                div(class='question-label')
-                  label( for='question') Ask Question Here
-                div(class='question-form-textarea')
-                  textarea(name='question' rows=10 cols=58)
-                div
-                  button(class='submit-question-button' type='submit') Ask Question
+        div(class="form-header")
+          h1 Ask a Public Question
+        div(class='question-form')
+          form(action='/questions/add' method='post')
+            input(type='hidden' name='_csrf' value=csrfToken)
+            div(class='form-container')
+              div(class='form-detail')
+                h1(class='h1-title') Title
+                div(class='title-detail')
+                  p Be Specific and imagine you're asking a question to another person
+                  textarea(class='title-text' name="title" type=textarea placeholder="e.g. How do I train my new puppy?")
+                h1(class='h1-body') Body
+                div(class='body-detail')
+                  p Include all the information someone would need to answer your question
+                  textarea(class='body-text' name="question" type=textarea)
+            div(class='post-question-container')
+              button(class='submit-question-bttn' type='submit') Post your question
+  else
+    redirect('/users/login')
+

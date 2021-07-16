@@ -29,7 +29,7 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res)=>{
 const questionValidator = [
   check('question')
     .exists({checkFalsy: true})
-    .withMessage('Please enter a question')
+    .withMessage('Please enter a body.')
 ]
 
 //create page so users can enter their questions
@@ -39,15 +39,27 @@ router.get('/add', csrfProtection, requireAuth, asyncHandler(async(req, res)=>{
 
 //posts a question
 router.post("/add", csrfProtection, requireAuth, questionValidator, asyncHandler(async (req, res) => {
-  const {question} = req.body;
+  const {question, title} = req.body;
   const {userId} = req.session.auth;
+
+  const newQuestion = await Question.create({
+    question,
+    title,
+    voteCount: 0,
+    answerCount: 0,
+    userId
+  });
+
+  res.redirect(`/questions/${newQuestion.id}`);
 
   const validatorErrors = validationResult(req);
 
   if (validatorErrors.isEmpty()) {
       const newQuestion = await Question.create({
           question,
+          title,
           voteCount: 0,
+          answerCount: 0,
           userId
       });
 

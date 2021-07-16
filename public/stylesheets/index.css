@@ -662,8 +662,78 @@ button.home:hover{
 }
 
 
+
 /* QUESTION_FORM(AKA ASK QUESTION) */
 .question-form-page{
+    padding-top: 100px;
+    width: 100%;
+    height: auto;
+}
+
+.question-form-container {
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    width: 100%;
+    background-color: inherit;
+    padding: 20px;
+}
+
+.form-header {
+    line-height: 1.3;
+    margin: 0 0 1em;
+}
+
+.form-header h1 {
+    font-size: 27px;
+    font-weight: 600;
+    color: black
+}
+
+.question-form{
+    grid-template-rows: 10fr 10fr;
+}
+
+.form-detail{
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #d6d9dc;
+    box-shadow: 0 10px 25px rgb(0 0 0 / 5%);
+    border-radius: 3px;
+}
+
+.h1-title, .h1-body {
+    font: 25px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: 700
+}
+
+.title-detail textarea {
+    width: 100%;
+    border: 1px solid rgb(168, 168, 168)
+}
+
+.body-detail textarea {
+    width: 100%;
+    height: 300px;
+    border: 1px solid lightgrey;
+}
+
+.h1-body{
+    margin-top: 26px
+}
+
+
+.post-question-container{
+    margin-top: 32px
+}
+
+.submit-question-bttn {
+    border-radius: 3px;
+    display: inline-block;
+    box-shadow: inset 0 1px 0 0 rgb(255 255);
+    cursor: pointer;
+    height: 50px
+}
+/* .question-form-page{
     display: flex;
     justify-content: center;
 }
@@ -694,7 +764,7 @@ button.home:hover{
 }
 .submit-question-button{
     border-radius: 5px
-}
+} */
 
 
 /* ANSWER_FORM(ANSWER) */

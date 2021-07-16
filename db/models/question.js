@@ -7,11 +7,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     title: {
       allowNull: false,
-      type: DataTypes.STRING(200)
+      type: DataTypes.STRING(255)
     },
     question: {
       allowNull: false,
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     voteCount:{
       allowNull: false,
