@@ -105,18 +105,18 @@ body{
 
     font-size: 20px;
 }
+
 button {
     display: flexbox;
-   height: 30px;
-   margin: 0px 3px 0px 0px;
-   padding: 6px 16px;
-   background-color:  #ffffff;
-   border-radius: 3px;
-   border: 0;
-   color: #3c4146;
-   font-size: msmall;
-
-
+    height: 30px;
+    margin: 0px 3px 0px 0px;
+    padding: 6px 16px;
+    background-color:  #ffffff;
+    border-radius: 3px;
+    border: 0;
+    color: #3c4146;
+    font-size: msmall;
+    cursor: pointer;
 }
 
 button.question,
@@ -310,10 +310,12 @@ button.home:hover{
 .fas.fa-chevron-up:hover{
     color: rgb(187, 123, 123);
     background-color: white;
+    cursor: pointer
 }
 .fas.fa-chevron-down:hover{
     color: rgb(187, 123, 123);
     background-color: white;
+    cursor: pointer
 }
 .counts-box{
     margin: 10px;
@@ -382,7 +384,7 @@ button.home:hover{
 
 .footer-container{
     display: grid;
-    grid-template-columns: 1fr 10fr 10fr;
+    grid-template-columns: 1fr 1fr 10fr 10fr;
     width: 100%;
     padding: 32px 12px 12px 12px;
     background-color: #1d1f1f;
@@ -392,6 +394,10 @@ button.home:hover{
 .footer-logo-img {
     width: 50px;
     height: 50px;
+}
+
+.footer-logo-name {
+    margin-left: 30px;
 }
 
 .name {
@@ -405,7 +411,6 @@ button.home:hover{
 
 .name-li li {
     list-style: none;
-
     font-size: 1rem;
     color: #bbc0c4;
     background-color: transparent;
@@ -417,6 +422,30 @@ button.home:hover{
 
 a {
     text-decoration: none;
+}
+
+.footer-info {
+    margin-left: 30px;
+}
+
+.footer-info text {
+    margin-right: 3px
+}
+
+.footer-info a {
+    color: #0077cc;
+}
+
+.names-list {
+    list-style: none;
+}
+
+text {
+   color: #bbc0c4
+}
+
+.fab.fa-github {
+    size: 7x
 }
 
 /* LOGIN PAGE */
