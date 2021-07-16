@@ -13,7 +13,7 @@ const { sequelize } = require('./db/models');
 const {sessionSecret} = require('./config')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const answersRouter = require('./routes/answers');
+// const answersRouter = require('./routes/answers');
 const questionsRouter = require('./routes/questions');
 const votingRouter = require("./routes/votes");
 const db = require('./db/models');
@@ -63,7 +63,7 @@ store.sync();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/answers', answersRouter);
+// app.use('/answers', answersRouter);
 app.use('/questions', questionsRouter);
 app.use('/votes', votingRouter);
 
