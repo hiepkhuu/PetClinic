@@ -15,11 +15,11 @@ module.exports = {
       },
       title: {
         allowNull: false,
-        type: Sequelize.STRING(200)
+        type: Sequelize.STRING(255)
       },
       question: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       voteCount: {
         allowNull: false,
