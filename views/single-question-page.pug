@@ -38,12 +38,11 @@ block content
                 p #{question.question}
               div(class='user-info-container')
                 div(class='user-info')
-                  p Asked by: #{userQ.userName} User info
+                  p Asked by: #{userQ.dataValues.username}
                   //- this is wehre i copied
           div
             div(class='answer-header')
                if locals.authenticated
-                  if (answers.length<0)
                    h2 Answers
                each answer in answers
                   div(class='question-description')
