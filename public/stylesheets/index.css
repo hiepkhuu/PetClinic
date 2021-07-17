@@ -201,7 +201,7 @@ button.home:hover{
 
 .ask-button-container button:hover{
     background-color:   rgb(74, 110, 110);
-  
+
     border: 1px solid rgb(212, 212, 212)
 }
 
@@ -637,21 +637,21 @@ a {
     padding-top: 30px;
 }
 .user-btn.ask-question{
-    display: inline-block;
-    background-color: rgb(88, 88, 88);
-    border-radius: 2px;
+    margin: 0px 0px 0px 150px;
+    background-color: rgb(87, 128, 127);
+    border-radius: 3px;
+    border: 1px solid transparent;
     color: rgb(255, 255, 255);
     font-size: small;
-    height: 50px;
-    width: 150px;
+    height: 40px;
+    width: 100px;
     font-family: inherit;
-    margin: 0px 0px 0px 0px;
     padding: 5px;
 }
 
 .user-btn.ask-question:hover{
-    background-color:  rgb(255, 255, 255);
-    color:black;
+    background-color:   rgb(74, 110, 110);
+
     border: 1px solid rgb(212, 212, 212)
 }
 .user-homepage-link {
