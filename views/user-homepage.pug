@@ -7,7 +7,9 @@ block content
             div(class='user-message')
               a(href='/' class='side-bar btn') Home
               p PUBLIC
-              a(href='') Questions
+              div(class='q-link')
+                 image(class='earth' src='/images/earth.png')
+                  a(href='/') Questions
           div(class='user-homepage-right-container')
               div(class='profile-container')
                 div(class='profile-image-container')
@@ -27,7 +29,7 @@ block content
                     h2 Questions
                   div
                         if (questions.length === 0)
-                            p you have no questions
+                            p(style='width:400px; font-size: small; margin-top:30px') Looks like you have no questions! Please click on the Ask Question button to ask one.
                         else
                             each question in questions
                                 //- li: a(href=`/questions/${question.id}`) class='' #{question.question}

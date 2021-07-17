@@ -7,7 +7,7 @@ const {Question, Answer, User} = require("../db/models");
 
 
 //get Q with id and render Q + answers
-router.get('/:id(\\d+)', csrfProtection,  requireAuth, asyncHandler(async(req, res)=>{
+router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
   const question = await Question.findByPk(req.params.id, {
     include: Answer
   })
@@ -19,11 +19,21 @@ router.get('/:id(\\d+)', csrfProtection,  requireAuth, asyncHandler(async(req, r
   if (!answers) {
     res.render("single-question-page", {question, userQ});
   }
-
-  const answerUserId = answers.userId;
+  answers.forEach(answer => {
+    answerUserId = answer.dataValues.userId
+    return answerUserId
+  })
   const userA = await User.findByPk(answerUserId);
 
-  res.render('single-question-page', {question, userQ, userA, answers, csrfToken: req.csrfToken()});
+  answers.forEach(answer => {
+    answerId = answer.dataValues.id
+    return answerId
+  })
+
+  const answerVote = await Answer.findByPk(answerId)
+
+
+  res.render('single-question-page', {question, answerVote, userQ, userA, answers, csrfToken: req.csrfToken()});
 }))
 
 const answersValidators =[

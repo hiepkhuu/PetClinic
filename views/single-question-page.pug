@@ -6,7 +6,9 @@ block content
       div(class='user-message')
           a(href='/' class='side-bar btn') Home
           p PUBLIC
-          a(href='') Questions
+          div(class='q-link')
+                 image(class='earth' src='/images/earth.png')
+                  a(href='/') Questions
     div(class='question-container')
         div(class='question-box')
           div(class="question-header")
@@ -40,22 +42,22 @@ block content
                   //- this is wehre i copied
           div
             div(class='answer-header')
-               h2 Answers
+               if locals.authenticated
+                  if (answers.length<0)
+                   h2 Answers
                each answer in answers
                   div(class='question-description')
                     div(class="votes-container")
                       div(class='question-upvote')
                         if locals.authenticated
-                          form(action='/votes/upvote/question' method='PATCH')
-                            button(class="question-upvote-button" id=`question-upvote-${question.id}`)
-                              i(class="fas fa-chevron-up")
+                          form(action=`/votes/upvote/answer/` method='PATCH')
+                            button(class="fas fa-chevron-up" id=`answer-upvote-${answerVote.dataValues.id}`)
                         //- i(class='fas fa-chevron-up'  id=`question-upvote-${question.id}` type="button" class="question-upvote-button")
                       div(class='question-span')
-                        span(class='number' id=`question-counter-${question.id}`) #{question.voteCount}
+                        span(class='number' id=`answer-counter-${answerVote.dataValues.id}`) #{answerVote.dataValues.voteCount}
                       if locals.authenticated
-                        form(action='/votes/downvote/question' method='PATCH')
-                          button(class='question-downvote-button' id=`question-downvote-${question.id}`)
-                            i(class="fas fa-chevron-down")
+                        form(action=`/votes/downvote/answer/` method='PATCH')
+                          button(class="fas fa-chevron-down" id=`answer-downvote-${answerVote.dataValues.id}`)
                           //- i(class='fas fa-chevron-down'  id=`question-downvote-${question.id}` type="button" class="question-downvote-button")
                       div(class='span')
                         span votes
@@ -64,7 +66,7 @@ block content
                         p #{answer.answer}
                       div(class='user-info-container')
                         div(class='user-info')
-                          p Asked by: #{answer.userId} User info
+                          p Answered By: #{userA.dataValues.username}
           //- div(class="description-detail-container")
             //- div
             //-   a(href=`/questions/${questions.id}/answers`)

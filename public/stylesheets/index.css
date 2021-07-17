@@ -216,7 +216,7 @@ button.home:hover{
     height: 40px;
     width: 100px;
     font-family: inherit;
-    margin: 60px 10px 0px 0px;
+    margin: 70px 10px 0px 0px;
     padding: 5px;
     /* border: 1px solid rgb #636363; */
     /* box-shadow: 0px 0px 2px 1px #636363; */
@@ -256,10 +256,14 @@ button.home:hover{
     text-decoration: none;
 }
 .q-link{
-    display: flex
+    display: flex;
+}
+.q-link:hover{
+    background-color: rgb(226, 226, 226);
+
 }
 .q-link a{
-    margin-top: 10px
+    margin: 10px 0px 10px 5px
 }
 
 .side-bar.btn{
@@ -398,7 +402,8 @@ button.home:hover{
     margin: 10px;
     font-size: small;
     color: rgb(114, 113, 113);
-    max-width: 200px
+    max-width: 200px;
+    color: rgb(74, 110, 110);
 }
 
 .number{
@@ -420,6 +425,7 @@ button.home:hover{
     padding: 32px 12px 12px 12px;
     background-color: #1d1f1f;
     height: 200px;
+    border-top: 5px solid rgb(187, 123, 123);
 }
 
 .footer-logo-img {
