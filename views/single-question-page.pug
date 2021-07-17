@@ -43,8 +43,9 @@ block content
           div
             div(class='answer-header')
               h2 Answers
-              if (answers.length <0)
-                h2 This Question has no answers
+              if (answers.length <= 0)
+                div(class='no-answer-container')
+                  h2 This question has no answers. Be the first to answer!
               each answer in answers
                   div(class='question-description')
                     div(class="votes-container")

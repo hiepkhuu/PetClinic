@@ -407,7 +407,8 @@ button.home:hover{
 }
 
 .number{
-    font-size: 22px;
+    font-size: 18px;
+    padding-right: 10px;
 }
 
 .question-display-box{
@@ -800,7 +801,13 @@ text {
 
 .answer-header h2{
     margin: 15px 0px 0px 0px;
-    font-size: larger
+    font-size: 25px
+}
+
+.no-answer-container h2 {
+    font-size: 15px;
+    border-bottom: solid 1px rgb(114, 113, 113);
+    padding: 40px
 }
 
 /* QUESTION_FORM(AKA ASK QUESTION) */
