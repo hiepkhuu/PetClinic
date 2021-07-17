@@ -183,13 +183,32 @@ button.home:hover{
 }
 
 .ask-button-container {
-    margin-left: 12px;
+    margin-left: 0px 0px 0px 12px;
+}
+
+.ask-button-container button{
+    margin-top: 0px;
+    background-color: rgb(87, 128, 127);
+    border-radius: 3px;
+    border: 1px solid transparent;
+    color: rgb(255, 255, 255);
+    font-size: small;
+    height: 40px;
+    width: 100px;
+    font-family: inherit;
+    padding: 5px;
+}
+
+.ask-button-container button:hover{
+    background-color:   rgb(74, 110, 110);
+  
+    border: 1px solid rgb(212, 212, 212)
 }
 
 .btn.ask-question{
     /* position: relative; */
     display: inline-block;
-    background-color: rgb(87, 128, 127);;
+    background-color: rgb(87, 128, 127);
     border-radius: 3px;
     border: 1px solid transparent;
     color: rgb(255, 255, 255);
@@ -675,7 +694,7 @@ a {
 
 .question-box{
     /* display: grid; */
-    height: 600px;
+    height: auto;
     width: auto;
     padding: 24px;
     border-radius: 5px;
@@ -683,6 +702,7 @@ a {
 .question-header {
     display: flex;
     height: 100px;
+    justify-content: space-between
 }
 .question-header h1{
     font-size: 27px
@@ -848,39 +868,40 @@ a {
 
 
 /* ANSWER_FORM(ANSWER) */
-.answers-form-page{
-    display: flex;
-    justify-content: center;
-}
-.answers-form-box{
-    margin-top: 100px;
-}
 
-.answer-form-textarea{
-    border-radius: 10px;
+.answer-form-textarea textarea{
+    border-radius: 3px;
     margin-bottom: 15px;
+    width: 100%;
 }
 
 .answers-form{
-    margin-top: 80px;
-    width: 500px;
-    padding: 30px;
-    border: 0.5px solid black;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 3px #b1b1b1;
-    background-color: white;
-
+    width: 100%;
+    padding: 20px 10px 10px 10px;
 }
-.answer-label{
-    font-weight: bold;
+ .answer-label{
+
     margin-bottom: 15px;
     font-size: large
 }
 
 .answer-cancel-label{
-    margin-top: 15px;
+    margin-top: 5px;
+    text-decoration: underline;
+
+}
+
+.answer-cancel-label a{
+    font-size: smaller
 }
 
 .submit-answer-button{
-    border-radius: 5px
+    border-radius: 3px;
+    background-color: rgb(87, 128, 127);
+    color: white
+}
+
+.submit-answer-button:hover{
+    background-color: rgb(74, 110, 110);
+    color:white
 }

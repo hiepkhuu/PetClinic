@@ -7,13 +7,13 @@ block content
       +validationErrorSummary(errors)
       div(class='answers-form-container')
         div(class='answers-form-box')
-            form(class='answers-form' action=`/questions/${id}/answers` method='post')
+            form(class='answers-form' action=`/questions/${question.id}` method='post')
               div
                   input(type='hidden', name='_csrf' value=csrfToken)
               div(class='answer-label')
                   label(for='answer') Answer
               div(class='answer-form-textarea')
-                  textarea(name='answer', rows=10 cols=58)
+                  textarea(name='answer', rows=10)
               div
                   button( class='submit-answer-button' type='submit') Submit Answer
               div(class='answer-cancel-label')

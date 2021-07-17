@@ -13,7 +13,7 @@ block content
             h1 #{question.title}
             div(class='ask-button-container')
               a(href=`/questions/add`)
-                button(class='btn ask-question') Ask Question
+                button Ask Question
           div(class='question-description')
             div(class="votes-container")
               div(class='question-upvote')
@@ -41,29 +41,30 @@ block content
           div
             div(class='answer-header')
                h2 Answers
-          div(class='question-description')
-            div(class="votes-container")
-              div(class='question-upvote')
-                if locals.authenticated
-                  form(action='/votes/upvote/question' method='PATCH')
-                    button(class="question-upvote-button" id=`question-upvote-${question.id}`)
-                      i(class="fas fa-chevron-up")
-                //- i(class='fas fa-chevron-up'  id=`question-upvote-${question.id}` type="button" class="question-upvote-button")
-              div(class='question-span')
-                span(class='number' id=`question-counter-${question.id}`) #{question.voteCount}
-              if locals.authenticated
-                form(action='/votes/downvote/question' method='PATCH')
-                  button(class='question-downvote-button' id=`question-downvote-${question.id}`)
-                    i(class="fas fa-chevron-down")
-                  //- i(class='fas fa-chevron-down'  id=`question-downvote-${question.id}` type="button" class="question-downvote-button")
-              div(class='span')
-                span votes
-            div(class='question-description-content')
-              div(class='description')
-                p #{question.question}
-              div(class='user-info-container')
-                div(class='user-info')
-                  p Asked by: #{userQ.userName} User info
+               each answer in answers
+                  div(class='question-description')
+                    div(class="votes-container")
+                      div(class='question-upvote')
+                        if locals.authenticated
+                          form(action='/votes/upvote/question' method='PATCH')
+                            button(class="question-upvote-button" id=`question-upvote-${question.id}`)
+                              i(class="fas fa-chevron-up")
+                        //- i(class='fas fa-chevron-up'  id=`question-upvote-${question.id}` type="button" class="question-upvote-button")
+                      div(class='question-span')
+                        span(class='number' id=`question-counter-${question.id}`) #{question.voteCount}
+                      if locals.authenticated
+                        form(action='/votes/downvote/question' method='PATCH')
+                          button(class='question-downvote-button' id=`question-downvote-${question.id}`)
+                            i(class="fas fa-chevron-down")
+                          //- i(class='fas fa-chevron-down'  id=`question-downvote-${question.id}` type="button" class="question-downvote-button")
+                      div(class='span')
+                        span votes
+                    div(class='question-description-content')
+                      div(class='description')
+                        p #{answer.answer}
+                      div(class='user-info-container')
+                        div(class='user-info')
+                          p Asked by: #{answer.userId} User info
           //- div(class="description-detail-container")
             //- div
             //-   a(href=`/questions/${questions.id}/answers`)
