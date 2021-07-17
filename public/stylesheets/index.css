@@ -201,7 +201,7 @@ button.home:hover{
 
 .ask-button-container button:hover{
     background-color:   rgb(74, 110, 110);
-  
+
     border: 1px solid rgb(212, 212, 212)
 }
 
@@ -216,7 +216,7 @@ button.home:hover{
     height: 40px;
     width: 100px;
     font-family: inherit;
-    margin: 60px 10px 0px 0px;
+    margin: 70px 10px 0px 0px;
     padding: 5px;
     /* border: 1px solid rgb #636363; */
     /* box-shadow: 0px 0px 2px 1px #636363; */
@@ -239,6 +239,11 @@ button.home:hover{
     background-color: white;
     border-right: 1px solid rgb(202, 201, 201)
 }
+.earth {
+    width:20px;
+    height:20px;
+    margin: 10px 0px 0px 25px;
+}
 
 .side-bar p{
     margin: 10px 0px 0px 20px;
@@ -247,19 +252,29 @@ button.home:hover{
 }
 
 .side-bar a{
-    margin: 20px 0px 0px 30px;
+    margin: 0px 0px 0px 5px;
     text-decoration: none;
+}
+.q-link{
+    display: flex;
+}
+.q-link:hover{
+    background-color: rgb(226, 226, 226);
+
+}
+.q-link a{
+    margin: 10px 0px 10px 5px
 }
 
 .side-bar.btn{
-    margin: 60px 0px 0px 10px;
+    margin: 60px 0px 0px 0px;
     display: flex;
     justify-content: start;
     min-width: 140px;
     /* width: 100%; */
     /* margin-right: 30px; */
     /* border: 0px; */
-    padding: 8px 5px 8px 10px;
+    padding: 8px 5px 8px 20px;
     background-color: white;
     color: black;
     text-decoration: none;
@@ -268,8 +283,8 @@ button.home:hover{
     /* border-radius: 5px; */
 }
 .side-bar.btn:hover{
-    background-color: black;
-    color: white;
+    background-color: rgb(235, 235, 235);
+
 }
 
 /* Homepage question list */
@@ -387,7 +402,8 @@ button.home:hover{
     margin: 10px;
     font-size: small;
     color: rgb(114, 113, 113);
-    max-width: 200px
+    max-width: 200px;
+    color: rgb(74, 110, 110);
 }
 
 .number{
@@ -401,7 +417,6 @@ button.home:hover{
 }
 
 /* FOOTER */
-
 .footer-container{
     display: grid;
     grid-template-columns: 1fr 1fr 10fr 10fr;
@@ -409,17 +424,15 @@ button.home:hover{
     padding: 32px 12px 12px 12px;
     background-color: #1d1f1f;
     height: 200px;
+    border-top: 5px solid rgb(187, 123, 123);
 }
-
 .footer-logo-img {
     width: 50px;
     height: 50px;
 }
-
 .footer-logo-name {
     margin-left: 30px;
 }
-
 .name {
     text-transform: uppercase;
     font-weight: bold;
@@ -428,7 +441,6 @@ button.home:hover{
     color: #bbc0c4;
     margin-top: 0px;
 }
-
 .name-li li {
     list-style: none;
     font-size: 1rem;
@@ -439,35 +451,31 @@ button.home:hover{
     outline: 0;
     font-weight: normal
 }
-
 a {
     text-decoration: none;
 }
-
 .footer-info {
     margin-left: 30px;
 }
-
 .footer-info text {
     margin-right: 3px
 }
-
 .footer-info a {
     color: #0077cc;
 }
-
 .names-list {
     list-style: none;
 }
-
 text {
    color: #bbc0c4
 }
-
-.fab.fa-github {
-    size: 7x
+.fab.fa-github,
+.fab.fa-linkedin{
+    font-size: 24px;
+    padding: 5px;
+    color: white;
+    background-color: #1d1f1f;
 }
-
 /* LOGIN PAGE */
 .log-in-page{
     display: flex;
@@ -534,13 +542,16 @@ text {
 
 
 .login button{
+    border-radius: 3px;
+    background-color: rgb(87, 128, 127);
+    color: white;
     height: 40px;
-    margin-top: 15px;
-    border-radius: 5px;
+    margin: 15px 0px 0px 0px
 }
 
 .login button:hover{
-    background-color: #2c2c2c
+    background-color:   rgb(74, 110, 110);
+    border: 1px solid rgb(212, 212, 212)
 }
 
 
@@ -666,27 +677,27 @@ text {
     padding-top: 30px;
 }
 .user-btn.ask-question{
-    display: inline-block;
-    background-color: rgb(88, 88, 88);
-    border-radius: 2px;
+    margin: 0px 0px 0px 150px;
+    background-color: rgb(87, 128, 127);
+    border-radius: 3px;
+    border: 1px solid transparent;
     color: rgb(255, 255, 255);
     font-size: small;
-    height: 50px;
-    width: 150px;
+    height: 40px;
+    width: 100px;
     font-family: inherit;
-    margin: 0px 0px 0px 0px;
     padding: 5px;
 }
 
 .user-btn.ask-question:hover{
-    background-color:  rgb(255, 255, 255);
-    color:black;
+    background-color:   rgb(74, 110, 110);
+
     border: 1px solid rgb(212, 212, 212)
 }
 .user-homepage-link {
     text-decoration: none;
     /* height: 30px; */
-    padding: 5px 10px 5px 10px;
+    padding: 10px;
     width: 400px;
     border-radius: 5px;
 }

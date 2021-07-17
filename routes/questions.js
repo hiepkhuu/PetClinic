@@ -7,23 +7,35 @@ const {Question, Answer, User} = require("../db/models");
 
 
 //get Q with id and render Q + answers
-router.get('/:id(\\d+)', csrfProtection,  requireAuth, asyncHandler(async(req, res)=>{
+router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
   const question = await Question.findByPk(req.params.id, {
     include: Answer
   })
-  const questionId = question.id;
-  const questionUserId = question.userId;
+  // const questionId = question.id;
+  // const questionUserId = question.userId;
+  const questionId = question.dataValues.id;
+  const questionUserId = question.dataValues.userId;
   const userQ = await User.findByPk(questionUserId);
   const answers = await Answer.findAll({where: {questionId}});
 
   if (!answers) {
     res.render("single-question-page", {question, userQ});
   }
-
-  const answerUserId = answers.userId;
+  answers.forEach(answer => {
+    answerUserId = answer.dataValues.userId
+    return answerUserId
+  })
   const userA = await User.findByPk(answerUserId);
 
-  res.render('single-question-page', {question, userQ, userA, answers, csrfToken: req.csrfToken()});
+  answers.forEach(answer => {
+    answerId = answer.dataValues.id
+    return answerId
+  })
+
+  const answerVote = await Answer.findByPk(answerId)
+
+
+  res.render('single-question-page', {question, answerVote, userQ, userA, answers, csrfToken: req.csrfToken()});
 }))
 
 const answersValidators =[
@@ -97,13 +109,6 @@ router.post("/add", csrfProtection, requireAuth, questionValidator, asyncHandler
   const validatorErrors = validationResult(req);
 
   if (validatorErrors.isEmpty()) {
-      const newQuestion = await Question.create({
-          question,
-          title,
-          voteCount: 0,
-          answerCount: 0,
-          userId
-      });
 
       res.redirect(`/questions/${newQuestion.id}`);
   } else {
