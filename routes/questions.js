@@ -97,13 +97,6 @@ router.post("/add", csrfProtection, requireAuth, questionValidator, asyncHandler
   const validatorErrors = validationResult(req);
 
   if (validatorErrors.isEmpty()) {
-      const newQuestion = await Question.create({
-          question,
-          title,
-          voteCount: 0,
-          answerCount: 0,
-          userId
-      });
 
       res.redirect(`/questions/${newQuestion.id}`);
   } else {

@@ -239,6 +239,11 @@ button.home:hover{
     background-color: white;
     border-right: 1px solid rgb(202, 201, 201)
 }
+.earth {
+    width:20px;
+    height:20px;
+    margin: 10px 0px 0px 25px;
+}
 
 .side-bar p{
     margin: 10px 0px 0px 20px;
@@ -247,19 +252,25 @@ button.home:hover{
 }
 
 .side-bar a{
-    margin: 20px 0px 0px 30px;
+    margin: 0px 0px 0px 5px;
     text-decoration: none;
+}
+.q-link{
+    display: flex
+}
+.q-link a{
+    margin-top: 10px
 }
 
 .side-bar.btn{
-    margin: 60px 0px 0px 10px;
+    margin: 60px 0px 0px 0px;
     display: flex;
     justify-content: start;
     min-width: 140px;
     /* width: 100%; */
     /* margin-right: 30px; */
     /* border: 0px; */
-    padding: 8px 5px 8px 10px;
+    padding: 8px 5px 8px 20px;
     background-color: white;
     color: black;
     text-decoration: none;
@@ -268,8 +279,8 @@ button.home:hover{
     /* border-radius: 5px; */
 }
 .side-bar.btn:hover{
-    background-color: black;
-    color: white;
+    background-color: rgb(235, 235, 235);
+
 }
 
 /* Homepage question list */
@@ -534,13 +545,16 @@ text {
 
 
 .login button{
+    border-radius: 3px;
+    background-color: rgb(87, 128, 127);
+    color: white;
     height: 40px;
-    margin-top: 15px;
-    border-radius: 5px;
+    margin: 15px 0px 0px 0px
 }
 
 .login button:hover{
-    background-color: #2c2c2c
+    background-color:   rgb(74, 110, 110);
+    border: 1px solid rgb(212, 212, 212)
 }
 
 
@@ -686,7 +700,7 @@ text {
 .user-homepage-link {
     text-decoration: none;
     /* height: 30px; */
-    padding: 5px 10px 5px 10px;
+    padding: 10px;
     width: 400px;
     border-radius: 5px;
 }
