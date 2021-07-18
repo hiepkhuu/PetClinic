@@ -408,11 +408,13 @@ button.home:hover{
 
 .number{
     font-size: 18px;
-    padding-right: 10px;
+    padding-right:2px;
 }
-
+.span{
+    padding: 0px 5px 0px 5px
+}
 .question-display-box{
-    display: flexbox;
+
     width: 100%;
     margin: 10px;
 }
@@ -735,57 +737,66 @@ text {
 
 .question-box{
     /* display: grid; */
-    height: auto;
+
     width: auto;
     padding: 24px;
     border-radius: 5px;
 }
+.question-box h1{
+    border-bottom: 1px solid rgb(204, 204, 204);
+    margin: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-between
+}
 .question-header {
     display: flex;
-    height: 100px;
+    height: 1auto;
     justify-content: space-between
 }
 .question-header h1{
-    font-size: 27px
+    font-size: 27px;
 }
 
 .question-description {
-    /* display: flex;
-    border-bottom: 1px solid #e4e6e8;
-    padding-bottom: 16px;
-    padding-top: 160px;
-    margin-top: 15px */
-    width: 100%;
-    background-color: white;
-    display: grid;
-    grid-template-columns: 1fr 20fr;
-    margin-top: 30px;
-    border-bottom: 1px solid #e4e6e8;
+    display: flex;
+    border-bottom: 1px solid rgb(204, 204, 204);
+
 }
 
-.vote-container {
-    position: relative;
-    grid-template-rows: 1fr 1fr 1fr;
+.votes-container {
+    /* position: relative;
+    grid-template-rows: 1fr 1fr 1fr; */
+    margin:10px
 
 }
 
 .question-span{
     text-align: center;
-    padding-right: 10px
+
+    justify-content: center
 }
 
 .question-description-content{
-    grid-template-rows: 1fr 1fr;
+
+    width: 100%;
+    margin: 10px;
 }
 
 .user-info-container{
+    display: flex;
+    width: 100%;
     justify-content: flex-end;
-    display:flex;
-    margin-bottom: 30px;
 }
 
-.user-info{
-    padding-right: 16px
+.user-info p{
+    margin: 10px;
+    font-size: small;
+    color: rgb(114, 113, 113);
+    max-width: 200px;
+    color: rgb(74, 110, 110);
 }
 
 
