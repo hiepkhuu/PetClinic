@@ -337,9 +337,11 @@ button.home:hover{
     height: auto;
 }
 
-.fas.fas.fa-chevron-up{
+.fas.fas.fa-chevron-up,
+.fas.fas.fas.fa-chevron-down{
     width:auto;
     height: auto;
+    margin:0px 5px 0px 5px
 }
 .fas.fa-chevron-up:hover{
     color: rgb(187, 123, 123);
@@ -411,7 +413,7 @@ button.home:hover{
     padding-right:2px;
 }
 .span{
-    padding: 0px 5px 0px 5px
+    padding: 0px 5px 0px 7px
 }
 .question-display-box{
 
