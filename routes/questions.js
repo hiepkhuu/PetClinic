@@ -32,10 +32,8 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
     return answerId
   })
 
-  const answerVote = await Answer.findByPk(answerId)
 
-
-  res.render('single-question-page', {question, answerVote, userQ, userA, answers, csrfToken: req.csrfToken()});
+  res.render('single-question-page', {question, userQ, userA, answers, csrfToken: req.csrfToken()});
 }))
 
 const answersValidators =[
