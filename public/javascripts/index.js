@@ -70,10 +70,18 @@ for (let iAns = 0; iAns < upVoteAns.length; iAns++) {
     });
 }
 
+let questions = [];
 
 const searchBar = document.getElementById("searchBar");
 
 searchBar.addEventListener("keyup", e =>{
-    const searchString = e.target.value
+    const searchString = e.target.value.toLowerCase();
     console.log('####################################################################################',searchString)
+
+    const filteredQuestions = searchBar.filter((question) => {
+        return (
+            question.question.toLowerCase().includes(searchString)
+        )
+    });
+    
 })

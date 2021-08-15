@@ -20,8 +20,10 @@ body
        a(href=`/`)
           button(class='btn question') Questions
      div(class='search-container')
-      input(type='text' class='search-box' id='searchBar' placeholder='Search.........')
-      i(class="fas fa-search" id='search-icon')
+      <form >
+        input(type='search' class='search-box' id='searchBar' placeholder='Search.........')
+        i(class="fas fa-search" id='search-icon')
+      </form>
      div(class='right-corner-buttons')
         div(class='user-homepage-link-container')
             a(href='/users/homepage')
@@ -43,8 +45,10 @@ body
       a(href='/users/guest')
           button(class='btn guest') Demo Login
     div(class='search-container' )
-      input(type='text' class='search-box' id='searchBar' placeholder='Search.........')
-      i(class="fas fa-search" id='search-icon')
+      <form >
+        input(type='search' class='search-box' id='searchBar' placeholder='Search.........')
+        i(class="fas fa-search" id='search-icon')
+      </form>
     div(class='entry-container')
       a(href='/users/login')
           button(class='btn entry') Log in
