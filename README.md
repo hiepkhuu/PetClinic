@@ -13,7 +13,7 @@ Petclinic is a web clone inspired by StackOverflow, connecting medical professio
   - CSRF Protection against csrf attacks
  
  
-## Live Site => https://petclinic-overflow.herokuapp.com/
+## Live Site https://petclinic-overflow.herokuapp.com/
   ![image](https://user-images.githubusercontent.com/78452452/129511518-7fd22f94-7032-4ed1-9f37-5649952de87c.png)
 
  
