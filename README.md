@@ -21,7 +21,7 @@ Petclinic is a web clone inspired by StackOverflow, connecting medical professio
    ### User Features: 
           - Users may sign-in, sign-up or log-out of their accounts
           - Once logged in, Users may upvote and downvote on questions
-   ![image](https://user-images.githubusercontent.com/78452452/129512148-33ebf9b5-0e59-4982-9129-58a6eff26779.png)
+<!--    ![image](https://user-images.githubusercontent.com/78452452/129512148-33ebf9b5-0e59-4982-9129-58a6eff26779.png) -->
 
 
    ### Additional User Features: 
