@@ -83,5 +83,13 @@ searchBar.addEventListener("keyup", e =>{
             question.question.toLowerCase().includes(searchString)
         )
     });
-    
+
 })
+
+const displayQuestions = (question) => {
+    const htmlString = question
+        .map((question) => {
+            return
+        })
+
+}
