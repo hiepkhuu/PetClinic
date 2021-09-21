@@ -560,43 +560,90 @@ text {
 }
 
 
-/* SIGNUP PAGE */
+/****************************** SIGNUP PAGE *******************************/
 .sign-up-page{
-    padding: 70px;
+    display: flex;
+    justify-content: center;
+    padding: 27px;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    padding: 200px;
+    background-color: rgb(225, 225, 225);
+
+}
+
+.signup-content-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 48px;
+    width: 390px;
+}
+
+.signup-content-container h1 {
+    color: black;
+    margin-bottom: 32px;
+    font-size: 26px;
+}
+
+.signup-content {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.content-icon-container {
+    margin-right: 1.5%;
+}
+
+.content-icon {
+    filter: invert(41%) sepia(73%) saturate(2754%) hue-rotate(90deg) brightness(102%) contrast(106%);
+    width: 30px;
+    height: 30px;
+    color: rgb(87, 128, 127)
 }
 
 .signup-form-container{
+   width: 20em;
+   height: 25em;
    display: flex;
    justify-content: center;
+
 
 }
 
 .signup-form{
-    /* position: absolute; */
-    margin-top: 80px;
-    width: 300px;
-    padding: 30px;
-
+    width: 100%;
+    height: 100%;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 3px #b1b1b1;
     background-color: white;
-}
-/* .signup {
-    margin-top: 5px;
-    display: grid;
-    grid-template-rows: 1fr;
-    font-weight: bold
-} */
-
-.signup {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-.signup-container{
+.signup-inputs {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    flex-direction: column;
+    width: 100%;
+    height: 56px;
+}
+
+.signup-inputs label {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+
+.signup-inputs input{
+    height: 35px;
+    border: 0.5px solid rgb(214, 214, 214);
+    border-radius: 3px;
+    margin-bottom: 4px;
 }
 
 
@@ -605,27 +652,42 @@ text {
     margin-left: 5px;
 }
 
-.signup.input,
-.signup.checkbox {
-
-    width: 100%;
-    margin-top: 1px;
-    margin-left: 0px;
-    height: 30px;
+.signup-p {
+    color: rgb(157, 156, 156);
+    font-size: 13px;
 }
 
 
-.signup button{
+
+
+.signup-inputs button{
     height: 40px;
-    margin-top: 15px;
     border-radius: 5px;
+    background-color: rgb(87, 128, 127);
+    border: none;
+    margin-top: 10px;
+    color: white;
+    width: 100%;
 }
 
 .signup button:hover{
     background-color: #2c2c2c
 }
 
-/* USER HOMEPAGE */
+.signup-form-p {
+    margin-top: 5%;
+    font-size: 13px;
+    text-align: center;
+
+}
+
+.signup-form-p a {
+    margin-left: 5px;
+    font-size: 13px;
+    color:rgb(67, 161, 39);
+}
+
+/* *********************************USER HOMEPAGE ***********************************/
 .questions-answers-container{
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -724,7 +786,7 @@ text {
 .profile-info-containers h1 {
     padding: 0px 30px 0px 30px;
 }
-/* SINGLE QUESTION PAGE */
+/******************************* SINGLE QUESTION PAGE *****************************/
 
 .question-container-page{
     display:grid;
@@ -893,41 +955,10 @@ text {
     cursor: pointer;
     height: 50px
 }
-/* .question-form-page{
-    display: flex;
-    justify-content: center;
-}
-.question-form-box{
-    margin-top: 100px;
-
-}
-
-.question-form-textarea{
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.question-form{
-    margin-top: 80px;
-    width: 500px;
-    padding: 30px;
-
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 3px #b1b1b1;
-    background-color: white;
-
-}
-.question-label{
-    font-weight: bold;
-    margin-bottom: 15px;
-    font-size: large
-}
-.submit-question-button{
-    border-radius: 5px
-} */
 
 
-/* ANSWER_FORM(ANSWER) */
+
+/************************** ANSWER_FORM(ANSWER) ************************88*/
 
 .answer-form-textarea textarea{
     border-radius: 3px;
