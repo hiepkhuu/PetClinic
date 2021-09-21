@@ -5,34 +5,45 @@ include utils.pug
 block content
   div(class='sign-up-page')
     +validationErrorSummary(errors)
+    div(class='signup-content-container')
+      h1 Join the PetClinic Community
+      div(class='signup-content')
+        div(class='content-icon-container')
+          img(class='content-icon' src='/images/signup1.png')
+        div Get unstuck -- ask a question
+      div(class='signup-content')
+        div(class='content-icon-container')
+          img(class='content-icon' src='/images/signup2.png')
+        div Unlock new privileges like voting and commenting
+      div(class='signup-content')
+        div(class='content-icon-container')
+          img(class='content-icon' src='/images/signup3.png')
+        div Save your favorite tags, filters, and jobs
+      div(class='signup-content')
+        div(class='content-icon-container')
+          img(class='content-icon' src='/images/signup4.png')
+        div Earn reputation and badges
+      p(class='signup-p') Use the power of PetClinic inside your organization.
     div(class='signup-form-container')
         form(class='signup-form' action="/users/register", method="post")
           div
             input(type="hidden", name="_csrf", value=csrfToken)
-          div(class='signup name')
-            div(class='signup label')
+          div(class='signup-inputs')
               label(for="username") Display name
-            div(class='signup input')
               input(type="text" name="username" id="username" value=user.username)
-          div(class='signup email')
-            div(class='signup label')
+          div(class='signup-inputs')
               label(for="email") Email
-            div(class='signup input')
               input(type="text" name="email" id="email" value=user.email)
-          div(class='signup professionaluser')
-            div(class='signup label')
-              label(for="professionalUser") Is Professional User
-            div(class='signup checkbox')
+          div(class='signup-inputs')
+              label(for="professionalUser") Professional User
               input(type="checkbox" name="professionalUser" id="professionalUser" checked=user.professionalUser)
-          div(class='signup password')
-            div(class='signup label')
+          div(class='signup-inputs')
               label(for="password") Password
-            div(class='signup input')
               input(type="password" name="password" id="password")
-          div(class='signup confirmpassword')
-            div(class='signup label')
+          div(class='signup-inputs')
               label(for="confirmPassword") Confirm Password
-            div(class='signup input')
               input(type="password" name="confirmPassword" id="confirmPassword")
-          div(class='signup button')
+          div(class='signup-inputs')
             button(type="submit") Sign up
+          div(class='signup-form-p') Already have an account?
+            a(href='/users/login') Login
