@@ -893,38 +893,7 @@ text {
     cursor: pointer;
     height: 50px
 }
-/* .question-form-page{
-    display: flex;
-    justify-content: center;
-}
-.question-form-box{
-    margin-top: 100px;
 
-}
-
-.question-form-textarea{
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.question-form{
-    margin-top: 80px;
-    width: 500px;
-    padding: 30px;
-
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 3px #b1b1b1;
-    background-color: white;
-
-}
-.question-label{
-    font-weight: bold;
-    margin-bottom: 15px;
-    font-size: large
-}
-.submit-question-button{
-    border-radius: 5px
-} */
 
 
 /* ANSWER_FORM(ANSWER) */
@@ -965,3 +934,7 @@ text {
     background-color: rgb(74, 110, 110);
     color:white
 }
+
+
+/* SIGN UP PAGE */
+

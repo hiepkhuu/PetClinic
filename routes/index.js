@@ -10,14 +10,13 @@ router.get('/', asyncHandler(async (req, res, next)=> {
   const questions = await Question.findAll({
     include: [User, Answer],
     order: [["createdAt", "DESC"]],
-    limit: 10
+    limit: 15
   });
 
   questions.forEach(question => {
     question.User = question.User.dataValues.username
   })
 
-  // console.log(questions[0].dataValues.User.dataValues.username)
 
   res.render('index', { questions, title: 'Questions' });
 }));
