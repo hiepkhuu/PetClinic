@@ -855,6 +855,28 @@ text {
     justify-content: flex-end;
 }
 
+.answer-info-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.answer-delete-edit-container {
+    display: flex;
+    align-items: center;
+}
+
+.answer-delete-edit-container a {
+    border: none;
+    cursor: pointer;
+    color: rgb(156, 156, 156);
+    font-size: 13px;
+    margin-right: 18px;
+}
+
+.answer-delete-edit-container a:hover {
+    color: black;
+}
+
 
 .user-info p{
     margin: 10px;
@@ -865,10 +887,7 @@ text {
 }
 
 
-.answer-delete-edit-container {
-    display: flex;
-    align-items: center;
-}
+
 
 .description-detail-container{
     width: 100%;

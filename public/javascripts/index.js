@@ -73,13 +73,15 @@ for (let iAns = 0; iAns < upVoteAns.length; iAns++) {
 const deleteButton = document.querySelector(".delete-answer")
 
 if (deleteButton !== null) {
+
     deleteButton.addEventListener("click", async (event) => {
         event.preventDefault()
-        const answerId = event.target.id
-        await fetch(`/answers/${answerId}`, {
-            method: 'DELETE'
-        })
-
+        if(confirm("Delete this answer?")) {
+            const answerId = event.target.id
+            await fetch(`/answers/${answerId}`, {
+                method: 'DELETE'
+            })
+        }
         window.location.reload()
     })
 }
