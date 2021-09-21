@@ -13,8 +13,9 @@ router.get('/', asyncHandler(async (req, res, next)=> {
     limit: 15
   });
 
+
   questions.forEach(question => {
-    question.User = question.User.dataValues.username
+    question.User = question.dataValues.User.username
   })
 
 

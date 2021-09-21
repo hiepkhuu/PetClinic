@@ -53,21 +53,25 @@ block content
                         if locals.authenticated
                           form(action=`/votes/upvote/answer/` method='PATCH')
                             button(class="fas fa-chevron-up answer-upvote-button" id=`answer-upvote-${answer.id}`)
-                        //- i(class='fas fa-chevron-up'  id=`question-upvote-${question.id}` type="button" class="question-upvote-button")
                       div(class='question-span')
                         span(class='number' id=`answer-counter-${answer.id}`) #{answer.voteCount}
                       if locals.authenticated
                         form(action=`/votes/downvote/answer/` method='PATCH')
                           button(class="fas fa-chevron-down answer-downvote-button" id=`answer-downvote-${answer.id}`)
-                          //- i(class='fas fa-chevron-down'  id=`question-downvote-${question.id}` type="button" class="question-downvote-button")
                       div(class='span')
                         span votes
                     div(class='question-description-content')
                       div(class='description')
                         p #{answer.answer}
                       div(class='user-info-container')
+                        div(class='answer-delete-edit-container')
+                          if locals.user
+                            if locals.user.id === answer.userId
+                              button(class='delete-answer' id=`${answer.id}`) Delete
+                              button(class='edit-answer' id=`${answer.id}`) Edit
                         div(class='user-info')
                           p Answered By: #{userA.dataValues.username}
+
           //- div(class="description-detail-container")
             //- div
             //-   a(href=`/questions/${questions.id}/answers`)

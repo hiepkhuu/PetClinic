@@ -855,6 +855,7 @@ text {
     justify-content: flex-end;
 }
 
+
 .user-info p{
     margin: 10px;
     font-size: small;
@@ -863,6 +864,11 @@ text {
     color: rgb(74, 110, 110);
 }
 
+
+.answer-delete-edit-container {
+    display: flex;
+    align-items: center;
+}
 
 .description-detail-container{
     width: 100%;
