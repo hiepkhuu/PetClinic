@@ -62,8 +62,8 @@ block content
                         div(class='answer-delete-edit-container')
                           if locals.user
                             if locals.user.id === answer.userId
-                              a(class='edit-answer' id=`${answer.id}`) Edit
-                              a(class='delete-answer' id=`${answer.id}`) Delete
+                              a(class='edit-answer' id=`edit-${answer.id}`) Edit
+                              a(class='delete-answer' id=`delete-${answer.id}`) Delete
                         div(class='user-info')
                           p Answered By: #{userA.dataValues.username}
           include answers.pug
