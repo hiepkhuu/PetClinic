@@ -16,7 +16,7 @@ html {
     height: 45px;
     margin-right: 5px;
     border-radius: 20px;
-    padding: 5px 10px;
+    padding: 3px 13px;
 
 }
 .favicon:hover {
@@ -55,7 +55,7 @@ html {
     box-sizing: border-box;
     height: 55px;
     color: rgb(39, 39, 39);
-    box-shadow: 0px 0px 5px 1px #686868;
+    box-shadow: 0px 0px 1px 1px #c7c7c7;
 }
 
 
@@ -66,19 +66,75 @@ body{
 }
 
 /*****************SPLASHPAGE *****************************/
+
+.splash-page{
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #a5efee;
+    flex-direction: column
+}
+
+.splash-photo-container{
+    background-color: #a5efee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70%
+}
 .splash-photo{
-    background-image: url(/images/petclinic-splashpage.png);
+    display:inherit;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(/images/petclinic-splashpage-filled.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 80vh;
+    height: 70vh;
+    width: 75vw;
+}
+
+.splash-photo h1{
+    margin-top: 30px;
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 1px 1px white;
+    background-color:  #a5efee
+}
+
+.splash-photo h2{
+    font-size: 20px;
+    /* font-weight: bold; */
+    color: black;
+    width: 22em;
+    text-align: center;
+    text-shadow: 1px 1px white;
+    background-color:  #a5efee;
+    height: 75px;
 }
 
 
+.splash-message-container{
+    margin: 0px 0px;
+    padding: 30px 0px;
+    background-color: white;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.splash-message-container h1{
+    font-weight: bold;
+    margin: 30px 0px;
+    color:black
+}
 
 
-
-
-
+.splash-bottom-img{
+    height: 35vh;
+    width: 60vw
+}
 
 .search-box{
     /* display:flex;
