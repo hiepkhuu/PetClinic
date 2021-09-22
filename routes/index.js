@@ -24,7 +24,7 @@ router.get('/questions', asyncHandler(async (req, res, next)=> {
 
 //get splashpage
 router.get('/', asyncHandler(async(req, res, next) => {
-  res.render('layout')
+  res.render('splashpage')
 }))
 
 module.exports = router;
