@@ -33,8 +33,14 @@ block content
               div(class='description')
                 p #{question.question}
               div(class='user-info-container')
-                div(class='user-info')
-                  p Asked by: #{userQ.dataValues.username}
+                  div(class='question-delete-edit-container')
+                    if locals.user
+                      if locals.user.id === question.userId
+                        a(class='edit-question' id=`${question.id}`) Edit
+                        a(class='delete-question' id=`${question.id}`) Delete
+                  div(class='user-info')
+                    p Asked by: #{userQ.dataValues.username}
+
           div
             div(class='answer-header')
               h2 Answers
@@ -57,7 +63,7 @@ block content
                         span votes
                     div(class='question-description-content')
                       div(class='description')
-                        p #{answer.answer}
+                        p(class='answer-content') #{answer.answer}
                       div(class='answer-info-container')
                         div(class='answer-delete-edit-container')
                           if locals.user

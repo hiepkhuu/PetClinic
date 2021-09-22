@@ -70,11 +70,11 @@ for (let iAns = 0; iAns < upVoteAns.length; iAns++) {
     });
 }
 
-const deleteButton = document.querySelector(".delete-answer")
+const answerDeleteButton = document.querySelector(".delete-answer")
 
-if (deleteButton !== null) {
+if (answerDeleteButton !== null) {
 
-    deleteButton.addEventListener("click", async (event) => {
+    answerDeleteButton.addEventListener("click", async (event) => {
         event.preventDefault()
         if(confirm("Delete this answer?")) {
             const answerId = event.target.id
@@ -85,3 +85,57 @@ if (deleteButton !== null) {
         window.location.reload()
     })
 }
+
+const questionDeleteButton = document.querySelector('.delete-question')
+if (questionDeleteButton !== null) {
+    questionDeleteButton.addEventListener('click', async (event) => {
+        event.preventDefault()
+        if(confirm("Delete this question?")) {
+            const questionId = event.target.id
+            await fetch(`/questions/${questionId}`, {
+                method: 'DELETE'
+            })
+        }
+        window.location.reload()
+    })
+}
+
+// const editButton = document.querySelector('.edit-answer')
+// // const answerDescription = document.querySelector('.description')
+// const answerContent = document.querySelector('.answer-content')
+// if (editButton !==null) {
+//     editButton.addEventListener('click', async(event) => {
+//         const form = document.createElement('form')
+//             form.classList.add('edit-form')
+//             answerContent.appendChild(form)
+
+//         const textArea = document.createElement('textarea')
+//             textArea.classList.add('edit-text-area')
+//             textArea.innerHTML = answerContent.innerHTML
+//             form.appendChild(textArea)
+
+//         const submitButton = document.createElement('input')
+//             submitButton.classList.add('edit-submit')
+//             submitButton.setAttribute('type', 'submit')
+//             submitButton.setAttribute('value', 'Submit Edit')
+//             form.appendChild(submitButton)
+
+
+//         answerDescription.remove(answerContent)
+
+//         submitButton.addEventListener('click', async e => {
+//             e.preventDefault()
+//             const content = { content: textArea.value }
+
+//             await fetch(`/answers/${answerId}`, {
+//                 method: 'PUT',
+//                 headers: {
+//                     'Content-Type': 'application/json',
+//                 },
+//                 body: JSON.stringify(content),
+//             })
+
+//             window.location.reload()
+//         })
+//     })
+// }
