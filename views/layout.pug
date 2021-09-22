@@ -15,9 +15,9 @@ body
    if locals.authenticated
      div(class='home-left-button')
         a(href='/')
-          image(class='favicon' src='/images/pet-flow-logo-with-name.png')
+          image(class='favicon' src='/images/pet-flow-logo-with-name-PhotoRoom.png')
      div
-       a(href=`/`)
+       a(href=`/questions`)
           button(class='btn question') Questions
      div(class='search-container')
       input(type='search' class='search-box' placeholder='Search.........')
@@ -36,9 +36,9 @@ body
    else
     div(class='home-left-button')
       a(href='/')
-          image(class='favicon' src='/images/pet-flow-logo-with-name.png')
+          image(class='favicon' src='/images/pet-flow-logo-with-name-PhotoRoom.png')
     div
-      a(href=`/`)
+      a(href=`/questions`)
           button(class='btn question') Questions
       a(href='/users/guest')
           button(class='btn guest') Demo Login
@@ -50,5 +50,9 @@ body
           button(class='btn entry') Log in
       a(href='/users/register')
           button(class='btn entry') Sign up
+
+
+
+
 
   block content

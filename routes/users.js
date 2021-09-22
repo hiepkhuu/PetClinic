@@ -170,7 +170,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
 router.get('/guest', asyncHandler(async(req, res) => {
   const user = await User.findByPk(1);
   loginUser(req, res, user);
-  return res.redirect("/");
+  return res.redirect("/questions");
 })
 
 );
