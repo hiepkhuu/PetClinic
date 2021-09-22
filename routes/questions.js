@@ -11,7 +11,6 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
   const question = await Question.findByPk(req.params.id, {
     include: Answer
   })
-  console.log('CONSOLE LOG', question)
   // const questionId = question.id;
   // const questionUserId = question.userId;
   const questionId = question.dataValues.id;
@@ -19,19 +18,18 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
   const userQ = await User.findByPk(questionUserId);
   const answers = await Answer.findAll({where: {questionId}});
 
+  
+
   if (!answers) {
     res.render("single-question-page", {question, userQ});
   }
   answers.forEach(answer => {
-    let answerUserId = answer?.dataValues?.userId
+    answerUserId = answer.dataValues.userId
     return answerUserId
   })
-  const userA = await User?.findByPk(answerUserId);
+  const userA = await User.findByPk(answerUserId);
 
-  answers.forEach(answer => {
-    answerId = answer.dataValues.id
-    return answerId
-  })
+  console.log('CONSOLE', answers)
 
 
   res.render('single-question-page', {question, userQ, userA, answers, csrfToken: req.csrfToken()});
