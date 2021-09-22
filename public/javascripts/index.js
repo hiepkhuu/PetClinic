@@ -82,8 +82,10 @@ answerDeleteButton.forEach(eachButton => {
             await fetch(`/answers/${answerId}`, {
                 method: 'DELETE'
             })
-            window.location.reload()
+
         }
+
+        window.location.reload()
 
     })
 })

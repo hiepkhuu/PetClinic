@@ -10,29 +10,30 @@ const {Question, Answer, User} = require("../db/models");
 router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
   const question = await Question.findByPk(req.params.id, {
     include: Answer
-  })
+  }
+  )
   // const questionId = question.id;
   // const questionUserId = question.userId;
   const questionId = question.dataValues.id;
   const questionUserId = question.dataValues.userId;
   const userQ = await User.findByPk(questionUserId);
-  const answers = await Answer.findAll({where: {questionId}});
-
-
+  const answers = await Answer.findByPk(questionId, {include: User});
 
   if (!answers) {
     res.render("single-question-page", {question, userQ});
   }
-  answers.forEach(answer => {
-    answerUserId = answer.dataValues.userId
-    return answerUserId
-  })
-  const userA = await User.findByPk(answerUserId);
+  console.log('###############', answers)
+  // let answerUserId;
+  // answers.forEach(answer => {
+  //   answerUserId = answer.dataValues.userId
+  //   return answerUserId
+  // })
+  // const userA = await User.findByPk(answerUserId);
 
-  console.log('CONSOLEXXXXXXX', answers)
+  // console.log('CONSOLEXXXXXXX', answers)
 
 
-  res.render('single-question-page', {question, userQ, userA, answers, csrfToken: req.csrfToken()});
+  res.render('single-question-page', {question, userQ,  answers, csrfToken: req.csrfToken()});
 }))
 
 const answersValidators =[
