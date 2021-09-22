@@ -18,6 +18,8 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
   const userQ = await User.findByPk(questionUserId);
   const answers = await Answer.findAll({where: {questionId}});
 
+
+
   if (!answers) {
     res.render("single-question-page", {question, userQ});
   }
@@ -27,10 +29,7 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
   })
   const userA = await User.findByPk(answerUserId);
 
-  answers.forEach(answer => {
-    answerId = answer.dataValues.id
-    return answerId
-  })
+  console.log('CONSOLEXXXXXXX', answers)
 
 
   res.render('single-question-page', {question, userQ, userA, answers, csrfToken: req.csrfToken()});
@@ -118,26 +117,16 @@ router.post("/add", csrfProtection, requireAuth, questionValidator, asyncHandler
   }
 }));
 
-// router.get('/:id(\\d+)/answers', csrfProtection,  requireAuth, asyncHandler(async(req, res)=>{//add require auth later
-//   const id = req.params.id;
-//   const {userId} = req.session.auth;
+router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
+  const question= await Question.findOne({
+    where: {
+        id: req.params.id
+    }
+  });
 
-//   const user = await User.findByPk(userId);
-//   // if (user.professionalUser){
-//   //   res.render('answers', { id, title: 'Answer', csrfToken: req.csrfToken()})
-//   // } else {
-//   //   res.render('unauthorized-user')
-//   // }
-//   if (user){
-//     res.render('single-question-page', { id, title: 'Answer', csrfToken: req.csrfToken()})
-//   }
-
-
-// }))
-
-// router.get('/add/answers', csrfProtection, requireAuth, asyncHandler(async(req, res)=>{
-//   res.render('single-question-page', {csrfToken: req.csrfToken()})
-// }))
+  await question.destroy()
+  res.redirect('/')
+}));
 
 
 module.exports = router

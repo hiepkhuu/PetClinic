@@ -927,23 +927,21 @@ text {
     margin: 10px;
 }
 
-.user-info-container{
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-}
-
-.answer-info-container {
+.user-info-container, .answer-info-container {
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
-.answer-delete-edit-container {
+
+
+
+.answer-delete-edit-container, .question-delete-edit-container  {
     display: flex;
     align-items: center;
 }
 
-.answer-delete-edit-container a {
+.answer-delete-edit-container a,
+.question-delete-edit-container a{
     border: none;
     cursor: pointer;
     color: rgb(156, 156, 156);
@@ -951,7 +949,8 @@ text {
     margin-right: 18px;
 }
 
-.answer-delete-edit-container a:hover {
+.answer-delete-edit-container a:hover,
+.question-delete-edit-container a:hover {
     color: black;
 }
 
