@@ -4,9 +4,11 @@ include utils.pug
 
 block content
       div(class='log-in-page')
-        +validationErrorSummary(errors)
+
         div(class='login-form-container')
+
             form(class='login-form' action="/users/login", method="post")
+              +validationErrorSummary(errors)
               div
                 input(type="hidden", name="_csrf", value=csrfToken)
               div(class='login email')
