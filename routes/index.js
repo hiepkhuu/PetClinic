@@ -6,7 +6,7 @@ const {Question, User, Answer} = require("../db/models");
 /* GET home page. */
 
 //get all Qs
-router.get('/', asyncHandler(async (req, res, next)=> {
+router.get('/questions', asyncHandler(async (req, res, next)=> {
   const questions = await Question.findAll({
     include: [User, Answer],
     order: [["createdAt", "DESC"]],
@@ -21,5 +21,10 @@ router.get('/', asyncHandler(async (req, res, next)=> {
 
   res.render('index', { questions, title: 'Questions' });
 }));
+
+//get splashpage
+router.get('/', asyncHandler(async(req, res, next) => {
+  res.render('layout')
+}))
 
 module.exports = router;
