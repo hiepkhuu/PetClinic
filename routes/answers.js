@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const {check, validationResult} = require('express-validator');
 const { asyncHandler, csrfProtection } = require('./utils');
 const { User, Answer, Question } = require('../db/models')
-const {requireAuth} = require('../auth');
+
 
 
 router.put('/:id(\\d+)', asyncHandler(async (req, res) => {
@@ -22,6 +21,8 @@ router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
           id: req.params.id
       }
   });
+
+  console.log('CONSOLE ANSWERRRRRRRRRRRR', answer.dataValues)
 
   await answer.destroy()
   res.redirect('/')
