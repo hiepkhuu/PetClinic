@@ -4,7 +4,6 @@ include utils.pug
 
 block content
   div(class='sign-up-page')
-    +validationErrorSummary(errors)
     div(class='signup-content-container')
       h1 Join the PetClinic Community
       div(class='signup-content')
@@ -25,7 +24,9 @@ block content
         div Earn reputation and badges
       p(class='signup-p') Use the power of PetClinic inside your organization.
     div(class='signup-form-container')
+
         form(class='signup-form' action="/users/register", method="post")
+          +validationErrorSummary(errors)
           div
             input(type="hidden", name="_csrf", value=csrfToken)
           div(class='signup-inputs')
