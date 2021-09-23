@@ -91,19 +91,23 @@ answerDeleteButton.forEach(eachButton => {
 })
 
 
-const questionDeleteButton = document.querySelector('.delete-question')
-if (questionDeleteButton !== null) {
+const questionDeleteButton = document.querySelector(".delete-question")
+
     questionDeleteButton.addEventListener('click', async (event) => {
-        event.preventDefault()
-        if(confirm("Delete this question?")) {
-            const questionId = event.target.id
-            await fetch(`/questions/${questionId}`, {
-                method: 'DELETE'
-            })
-        }
-        window.location.reload()
-    })
-}
+            event.preventDefault()
+            let questionId = event.target.id
+            if(confirm("Delete this question?")) {
+
+                await fetch(`/questions/${questionId}`, {
+                    method: 'DELETE'
+                })
+                window.location.replace("https://petclinic-overflow.herokuapp.com/questions")
+            }
+           
+
+        })
+
+
 
 // const editButton = document.querySelector('.edit-answer')
 // // const answerDescription = document.querySelector('.description')

@@ -22,7 +22,7 @@ router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
       }
   });
 
-  console.log('CONSOLE ANSWERRRRRRRRRRRR', answer.dataValues)
+  // console.log('CONSOLE ANSWERRRRRRRRRRRR', answer.dataValues)
 
   await answer.destroy()
   res.redirect('/')
