@@ -22,7 +22,7 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
   if (!answers) {
     res.render("single-question-page", {question, userQ});
   }
-  console.log('###############', answers)
+  // console.log('###############', answers)
   let answerUserId;
   answers.forEach(answer => {
     answerUserId = answer.dataValues.userId

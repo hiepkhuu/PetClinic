@@ -44,6 +44,8 @@ html {
 
  }
 
+
+
 .nav_bar {
     position:fixed;
     display: flex;
@@ -361,6 +363,9 @@ button.home:hover{
 
 }
 
+.btn.question:focus{
+    background-color: #bbc0c4
+}
 /* Homepage question list */
 
 .question-page{
