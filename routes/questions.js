@@ -17,7 +17,7 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
   const questionId = question.dataValues.id;
   const questionUserId = question.dataValues.userId;
   const userQ = await User.findByPk(questionUserId);
-  const answers = await Answer.findAll({where: questionId});
+  const answers = await Answer.findAll({where: {questionId}});
 
   if (!answers) {
     res.render("single-question-page", {question, userQ});
